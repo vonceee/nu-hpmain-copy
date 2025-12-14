@@ -15,7 +15,7 @@ interface Testimonial {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, CommonModule, MainFooter, MainHeader, FontAwesomeModule],
+  imports: [CommonModule, MainFooter, MainHeader, FontAwesomeModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

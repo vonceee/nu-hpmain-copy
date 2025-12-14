@@ -7,7 +7,7 @@ import { aboutUs } from "./pages/company/about-us/about-us";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Industrial, Educational, Home, aboutUs],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
