@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { MainHeader } from "src/app/components/main-header/main-header";
+import { Component, signal, OnInit, OnDestroy } from '@angular/core';import { MainHeader } from "src/app/components/main-header/main-header";
 import { MainFooter } from "src/app/components/main-footer/main-footer";
 import { CommonModule } from '@angular/common';
 
@@ -22,13 +21,15 @@ interface TimelineEvent {
   templateUrl: './about-us.html',
   styleUrls: ['./about-us.scss', './programs-section.scss'],
 })
-export class aboutUs {
-  tab = signal<number>(0)
 
+export class aboutUs implements OnInit, OnDestroy {
+  tab = signal<number>(0);
+  
   currentGalleryIndex = signal<number>(0);
+  private autoPlayInterval: any;
 
   galleryItems: GalleryItem[] = [
-    {
+     {
       src: '/assets/images/aboutus/programs/07e4af2a12cc40d65d4ffdce1070383cda9a6972.png',
       caption: 'Ms. Mhae explains to the SPED children the applications of Fischer Tips during the art excercises for special children.'
     },
@@ -54,9 +55,39 @@ export class aboutUs {
     }
   ];
 
-  /* -- Programs Section Outreach Gallery -- */
+  // Hooks for Auto-Play
+  ngOnInit() {
+    this.startAutoPlay();
+  }
+
+  ngOnDestroy() {
+    this.stopAutoPlay();
+  }
+
+  startAutoPlay() {
+    // change image every 5 seconds (5000ms)
+    this.autoPlayInterval = setInterval(() => {
+      this.nextGalleryItem();
+    }, 5000);
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval);
+    }
+  }
+
+  nextGalleryItem() {
+    // calculate next index, loop back to 0 if at the end
+    const nextIndex = (this.currentGalleryIndex() + 1) % this.galleryItems.length;
+    this.currentGalleryIndex.set(nextIndex);
+  }
+
+  // update user interaction method
   setGalleryIndex(index: number) {
+    this.stopAutoPlay(); // stop the timer so it doesn't jump immediately after a click
     this.currentGalleryIndex.set(index);
+    this.startAutoPlay(); // restart the timer
   }
 
   events: TimelineEvent[] = [

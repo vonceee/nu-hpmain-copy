@@ -470,7 +470,8 @@
               <div class="outreach-content">
                 <div class="text-body">
                   <p>
-                    <span class="drop-cap">&ldquo;T</span>he company aims to meet the needs of Academe and Industry, focusing
+                    <span class="drop-cap">&ldquo;T</span>he company aims to meet the needs of Academe and Industry,
+                    focusing
                     on
                     creating a competitive workforce for a prosperous Filipino society. Outreach to underprivileged
                     members is also vital. During Christmas, Hytec Power Incorporated (HPI) partnered with a rotary club
@@ -492,11 +493,13 @@
 
               <div class="outreach-gallery">
                 <div class="main-gallery-img">
-                  <img [src]="galleryItems[currentGalleryIndex()].src"
-                    [alt]="galleryItems[currentGalleryIndex()].caption">
-                  <div class="gallery-caption">
-                    {{ galleryItems[currentGalleryIndex()].caption }}
+                  @for (item of [galleryItems[currentGalleryIndex()]]; track item.src) {
+                  <img [src]="item.src" [alt]="item.caption" class="slide-in-right">
+
+                  <div class="gallery-caption slide-in-right delay-1">
+                    {{ item.caption }}
                   </div>
+                  }
                 </div>
 
                 <div class="gallery-dots">
