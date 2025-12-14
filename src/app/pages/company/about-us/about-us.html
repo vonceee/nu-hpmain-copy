@@ -273,7 +273,7 @@
               <div class="red-banner">
                 <div class="date-box">
                   <span class="month">SEPT</span>
-                  <span class="year">2014</span>
+                  <span class="program-section-year">2014</span>
                 </div>
                 <div class="banner-text">
                   This is the biggest group that HPI has accommodated since it started the program in 2011.
@@ -301,7 +301,7 @@
               <div class="red-banner">
                 <div class="date-box">
                   <span class="month">FROM</span>
-                  <span class="year">2011</span>
+                  <span class="program-section-year">2011</span>
                 </div>
                 <div class="banner-text">
                   The HPI has partnered to a total of 300 Colleges and Universities in the Philippines.
@@ -329,7 +329,7 @@
               <div class="red-banner">
                 <div class="date-box">
                   <span class="month">IN</span>
-                  <span class="year">2025</span>
+                  <span class="program-section-year">2025</span>
                 </div>
                 <div class="banner-text">
                   The HPI is now accomodating 100 students for their Intership Program.
@@ -472,7 +472,9 @@
                   <i class="fas fa-quote-left"></i>
                 </div>
                 <p>
-                  <span style="font-family: 'Bebas neue', sans-serif; font-weight: 400; font-size: 64px; text-align: justify; color: red;">"T</span>he company aims to meet the needs of Academe and Industry, focusing on
+                  <span
+                    style="font-family: 'Bebas neue', sans-serif; font-weight: 400; font-size: 64px; text-align: justify; color: red;">"T</span>he
+                  company aims to meet the needs of Academe and Industry, focusing on
                   creating a competitive workforce for a prosperous Filipino society. Outreach to underprivileged
                   members is also vital. During Christmas, Hytec Power Incorporated (HPI) partnered with a rotary club
                   for community service projects. HPI donated an LCD TV to the SPED Department of Commonwealth
@@ -491,27 +493,24 @@
 
               <div class="outreach-gallery">
                 <div class="main-gallery-img">
-                  <img src="/assets/images/aboutus/programs/07e4af2a12cc40d65d4ffdce1070383cda9a6972.png"
-                    alt="Outreach Main">
+                  <img [src]="galleryItems[currentGalleryIndex()].src"
+                    [alt]="galleryItems[currentGalleryIndex()].caption">
                   <div class="gallery-caption">
-                    HPI Robot Show for underprivileged children in Malolos, Bulacan.
+                    {{ galleryItems[currentGalleryIndex()].caption }}
                   </div>
                 </div>
 
                 <div class="gallery-dots">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
+                  <span *ngFor="let item of galleryItems; let i = index" class="dot"
+                    [class.active]="i === currentGalleryIndex()" (click)="setGalleryIndex(i)">
+                  </span>
                 </div>
 
                 <div class="gallery-thumbs">
-                  <img src="/assets/images/aboutus/programs/07e4af2a12cc40d65d4ffdce1070383cda9a6972.png" alt="thumb 1">
-                  <img src="/assets/images/aboutus/programs/3d9f73857a51bed7a299433a5fbc93fd00d8bb88.png" alt="thumb 2">
-                  <img src="/assets/images/aboutus/programs/700eba0728af555a5ed2b7db7d3b7faf0fc74e89.png" alt="thumb 3">
-                  <img src="/assets/images/aboutus/programs/d930b7a59c5e8bccd902106856c6a5e9042ab23f.png" alt="thumb 4">
-                  <img src="/assets/images/aboutus/programs/fd8eb0a7fc53e1829f328e13286a6420520add75.png" alt="thumb 5">
+                  <img *ngFor="let item of galleryItems; let i = index" [src]="item.src" [alt]="item.caption"
+                    [style.opacity]="i === currentGalleryIndex() ? '1' : '0.6'"
+                    [style.border]="i === currentGalleryIndex() ? '2px solid red' : 'none'"
+                    style="cursor: pointer; transition: 0.3s;" (click)="setGalleryIndex(i)">
                 </div>
               </div>
 
@@ -546,4 +545,3 @@
   </div>
 </div>
 <main-footer></main-footer>
-
