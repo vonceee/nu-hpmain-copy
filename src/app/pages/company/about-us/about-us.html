@@ -18,32 +18,17 @@
 
 <div class="aboutus-content">
   <div class="about-main">
-    <div class="body-nav">
-      <button class="journey-btn" [class.active]="tab() == 0" (click)="tab.set(0)">
-        <img src="assets/images/aboutus/journey-icon.svg" alt="">
-        <span class="mediumEmphasizedTitle">Our Journey</span>
+    <nav class="body-nav">
+      <div class="nav-pill" [style.left]="indicatorLeft()" [style.width]="indicatorWidth()">
+      </div>
+
+      @for (item of navTabs; track item.id) {
+      <button #navBtn [class.active]="tab() == item.id" (click)="setTab(item.id)">
+        <img [src]="item.icon" [alt]="item.label">
+        <span class="mediumEmphasizedTitle">{{ item.label }}</span>
       </button>
-      <button class="award-btn" [class.active]="tab() == 1" (click)="tab.set(1)">
-        <img src="assets/images/aboutus/award-icon.svg" alt="">
-        <span class="mediumEmphasizedTitle">Awards and Achievements</span>
-      </button>
-      <button class="ceo-btn" [class.active]="tab() == 2" (click)="tab.set(2)">
-        <img src="assets/images/aboutus/ceo-icon.svg" alt="">
-        <span class="mediumEmphasizedTitle">President & CEO</span>
-      </button>
-      <button class="program-btn" [class.active]="tab() == 3" (click)="tab.set(3)">
-        <img src="assets/images/aboutus/program-icon.svg" alt="">
-        <span class="mediumEmphasizedTitle">Programs</span>
-      </button>
-      <button class="partner-btn" [class.active]="tab() == 4" (click)="tab.set(4)">
-        <img src="assets/images/aboutus/partner-icon.svg" alt="">
-        <span class="mediumEmphasizedTitle">Partnerships</span>
-      </button>
-      <button class="mission-btn" [class.active]="tab() == 5" (click)="tab.set(5)">
-        <img src="assets/images/aboutus/mission-icon.svg" alt="">
-        <span class="mediumEmphasizedTitle">Mission and Vision</span>
-      </button>
-    </div>
+      }
+    </nav>
     <div class="journey-content">
       @if (tab() == 0) {
       <div class="title-badge ldisplay">
@@ -346,7 +331,7 @@
         <section class="testimonials-section">
           <h2>Interns Testimonials</h2>
 
-          <div class="timeline-container">
+          <div class="interns_testimonials-container">
             <div class="timeline-line"></div>
 
             <div class="testimonial-row">

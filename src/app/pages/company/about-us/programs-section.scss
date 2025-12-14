@@ -127,10 +127,12 @@
     color: #fff;
 }
 
-.timeline-container {
+.interns_testimonials-container {
     position: relative;
-    max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
+    background-color: rgb(19, 13, 13);
+    min-height: max-content;
 }
 
 /* the vertical red line */
@@ -419,18 +421,22 @@
 /* --- Animations --- */
 
 .slide-in-right {
-    opacity: 0; /* start hidden */
+    opacity: 0;
+    /* start hidden */
     animation: slideInRight 0.5s ease-out forwards;
 }
 
 @keyframes slideInRight {
     0% {
         opacity: 0;
-        transform: translateX(50px); /* start 50px to the right */
+        transform: translateX(50px);
+        /* start 50px to the right */
     }
+
     100% {
         opacity: 1;
-        transform: translateX(0); /* end at natural position */
+        transform: translateX(0);
+        /* end at natural position */
     }
 }
 

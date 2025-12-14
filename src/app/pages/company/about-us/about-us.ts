@@ -1,6 +1,13 @@
-import { Component, signal, OnInit, OnDestroy } from '@angular/core';import { MainHeader } from "src/app/components/main-header/main-header";
+import { Component, signal, OnInit, OnDestroy, ViewChildren, QueryList, ElementRef, AfterViewInit, HostListener } from '@angular/core';
+import { MainHeader } from "src/app/components/main-header/main-header";
 import { MainFooter } from "src/app/components/main-footer/main-footer";
 import { CommonModule } from '@angular/common';
+
+interface NavTab {
+  id: number;
+  label: string;
+  icon: string;
+}
 
 /* -- Programs Section Outreach Gallery -- */
 interface GalleryItem {
@@ -24,12 +31,27 @@ interface TimelineEvent {
 
 export class aboutUs implements OnInit, OnDestroy {
   tab = signal<number>(0);
-  
+
+  /* -- NavTabs Variables -- */
+  @ViewChildren('navBtn') navButtons!: QueryList<ElementRef>;
+  indicatorLeft = signal<string>('0px');
+  indicatorWidth = signal<string>('0px');
+
+  /* -- Outreach Gallery Variables -- */
   currentGalleryIndex = signal<number>(0);
   private autoPlayInterval: any;
 
+  navTabs: NavTab[] = [
+    { id: 0, label: 'Our Journey', icon: 'assets/images/aboutus/journey-icon.svg' },
+    { id: 1, label: 'Awards and Achievements', icon: 'assets/images/aboutus/award-icon.svg' },
+    { id: 2, label: 'President & CEO', icon: 'assets/images/aboutus/ceo-icon.svg' },
+    { id: 3, label: 'Programs', icon: 'assets/images/aboutus/program-icon.svg' },
+    { id: 4, label: 'Partnerships', icon: 'assets/images/aboutus/partner-icon.svg' },
+    { id: 5, label: 'Mission and Vision', icon: 'assets/images/aboutus/mission-icon.svg' },
+  ];
+
   galleryItems: GalleryItem[] = [
-     {
+    {
       src: '/assets/images/aboutus/programs/07e4af2a12cc40d65d4ffdce1070383cda9a6972.png',
       caption: 'Ms. Mhae explains to the SPED children the applications of Fischer Tips during the art excercises for special children.'
     },
@@ -55,7 +77,40 @@ export class aboutUs implements OnInit, OnDestroy {
     }
   ];
 
-  // Hooks for Auto-Play
+
+  /* -- NavTabs Functions -- */
+  ngAfterViewInit() {
+    // timeout ensures the DOM is fully rendered before measuring
+    setTimeout(() => this.updateIndicator(this.tab()), 50);
+  }
+
+  // update the measurement whenever the window resizes
+  @HostListener('window:resize')
+  onResize() {
+    this.updateIndicator(this.tab());
+  }
+
+  // setTab method to trigger the update
+  setTab(index: number) {
+    this.tab.set(index);
+    this.updateIndicator(index);
+  }
+
+  // find the active button and move the pill
+  updateIndicator(index: number) {
+    if (!this.navButtons) return;
+
+    const elements = this.navButtons.toArray();
+    const activeBtn = elements[index]?.nativeElement;
+
+    if (activeBtn) {
+      // offsetLeft gives the position relative to the .body-nav container
+      this.indicatorLeft.set(`${activeBtn.offsetLeft}px`);
+      this.indicatorWidth.set(`${activeBtn.offsetWidth}px`);
+    }
+  }
+
+  /* -- Outreach Gallery Functions -- */
   ngOnInit() {
     this.startAutoPlay();
   }
