@@ -1,7 +1,69 @@
 @use "text-display";
 @use "colors" as color;
 
+/* -- HERO SECTION STYLES -- */
+.hero-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  display: block;
+}
+
+.spot-img {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+
+  &.left {
+    opacity: 0.23;
+    width: 60vw;
+    top: -35vh;
+    left: -20vw;
+  }
+
+  &.right {
+    opacity: 0.13;
+    width: 50vw;
+    top: 1vh;
+    right: 8vw;
+  }
+}
+
+.hero-content {
+  gap: 3vh;
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-title {
+  margin: 0 0 2vh 0;
+  text-wrap: inherit;
+  text-align: center;
+}
+
+.no-margin {
+  margin: 0;
+  text-align: center;
+}
+
 .headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
   background: linear-gradient(to bottom, #DBDBDB, #A9A9A9);
   -webkit-background-clip: text;
   color: transparent;
