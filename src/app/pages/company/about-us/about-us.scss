@@ -1,7 +1,7 @@
 @use "text-display";
 @use "colors" as color;
 
-.headline{
+.headline {
   background: linear-gradient(to bottom, #DBDBDB, #A9A9A9);
   -webkit-background-clip: text;
   color: transparent;
@@ -20,17 +20,18 @@
   }
 }
 
-.aboutus-content{
+.aboutus-content {
   width: 100%;
   height: max-content;
   position: relative;
-  display: flex;align-items: center;
+  display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 4vh;
   padding: 4vh 0;
 }
 
-.about-main{
+.about-main {
   width: max-content;
   position: relative;
   display: flex;
@@ -79,13 +80,6 @@
   }
 }
 
-.pointer {
-  cursor: pointer;
-}
-
-
-
-
 .title-badge {
   width: min-content;
   height: 50px;
@@ -115,13 +109,11 @@
   background: linear-gradient(to right, #ED1C24, #871015);
 }
 
-
-
-.white{
-  color:white;
+.white {
+  color: white;
 }
 
-.journey-content{
+.journey-content {
   width: 85vw;
   display: flex;
   flex-direction: column;
@@ -134,7 +126,7 @@
   position: relative;
   width: 100%;
   margin: 0 auto;
-  background-color: #000;
+  background-color: rgb(19, 13, 13);
   min-height: max-content;
 }
 
@@ -205,6 +197,7 @@
   justify-content: space-around;
   gap: 1vh;
 }
+
 /* Year Label */
 .year {
   color: #ff0000;
@@ -254,14 +247,14 @@
 
 
 .smallHeadline {
-  margin:0;
+  margin: 0;
 }
 
-.largeBody{
+.largeBody {
   margin: 0 0 4vh 0;
 }
 
-.distributorship{
+.distributorship {
   width: 85vw;
   height: max-content;
   color: white;
@@ -287,25 +280,29 @@
   height: 40vh;
   margin: 0;
 
-  div{
+  div {
     width: 16.5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 
-    img{
-      width: auto;   /* don't scale width */
-      height: auto;  /* don't scale height */
-      max-width: none; /* prevent responsive shrinking */
+    img {
+      width: auto;
+      /* don't scale width */
+      height: auto;
+      /* don't scale height */
+      max-width: none;
+      /* prevent responsive shrinking */
       max-height: none;
-      object-fit: none; /* no resizing behavior */
+      object-fit: none;
+      /* no resizing behavior */
       display: inline-block;
       margin: 0;
       filter: grayscale(100%);
       transition: filter 0.5s ease;
 
-      &:hover{
+      &:hover {
         filter: grayscale(0%);
       }
     }
@@ -326,18 +323,18 @@
   display: flex;
   flex-direction: column;
 
-  p{
+  p {
     text-align: center;
     text-wrap: wrap;
     color: white;
   }
 
-  .main-container{
+  .main-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 
-    .image-container{
+    .image-container {
       width: 16.5%;
       display: flex;
       flex-direction: column;
@@ -345,17 +342,21 @@
       align-items: center;
       gap: 3vh;
 
-      img{
-        width: auto;   /* don't scale width */
-        height: auto;  /* don't scale height */
-        max-width: none; /* prevent responsive shrinking */
+      img {
+        width: auto;
+        /* don't scale width */
+        height: auto;
+        /* don't scale height */
+        max-width: none;
+        /* prevent responsive shrinking */
         max-height: none;
-        object-fit: none; /* no resizing behavior */
+        object-fit: none;
+        /* no resizing behavior */
         margin: 0;
         filter: grayscale(100%);
         transition: filter 0.5s ease;
 
-        &:hover{
+        &:hover {
           filter: none;
         }
       }
@@ -375,10 +376,10 @@
     margin: 0;
   }
 
-  .image-section{
+  .image-section {
     display: flex;
     flex-direction: row;
-    gap:1vw;
+    gap: 1vw;
     margin-top: 3vh;
 
     .image-container {
@@ -394,7 +395,7 @@
 }
 
 
-.content{
+.content {
   position: relative;
   width: 73%;
   height: max-content;
@@ -430,7 +431,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top:4vh;
+    padding-top: 4vh;
 
     .container {
       display: flex;
@@ -443,7 +444,7 @@
         align-items: center;
         gap: 1vh;
 
-        .red-dot{
+        .red-dot {
           height: 1vh;
           width: 1vh;
           background-color: #ED1C24;
@@ -466,7 +467,7 @@
   padding: 7vh 2vw;
   margin-top: 3vh;
 
-  .contents{
+  .contents {
     color: white;
     display: flex;
     flex-direction: column;
@@ -477,13 +478,13 @@
       width: 5.5vw;
     }
 
-    .message{
+    .message {
       display: flex;
       flex-direction: column;
       text-align: center;
-      gap:2vh;
+      gap: 2vh;
 
-      p{
+      p {
         margin: 0;
       }
     }

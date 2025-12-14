@@ -1,0 +1,372 @@
+@use "text-display";
+@use "colors" as color;
+
+/* Program Section */
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    border: 1px solid color.$secondaryAlpha10;
+    border-radius: 12px;
+    background: rgb(19, 13, 13);
+    color: white;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #b0b0b0;
+    font-weight: 300;
+}
+
+/* Programs Grid Section */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.program-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-desc {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    text-align: justify;
+    min-height: 120px;
+    color: #b0b0b0;
+}
+
+.image-card {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    min-height: 250px;
+    max-height: 250px;
+}
+
+.red-banner {
+    background-color: #d32f2f;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.date-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    margin-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 60px;
+}
+
+.date-box .month {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.date-box .year {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.banner-text {
+    font-size: 0.6rem;
+    line-height: 1.2;
+}
+
+.bottom-desc {
+    font-size: 0.8rem;
+    text-align: justify;
+    font-style: italic;
+    color: #cccccc;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+    color: #fff;
+}
+
+.testimonials-section h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #fff;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* the vertical red line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #d32f2f;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* dots on the line */
+.timeline-line::before,
+.timeline-line::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #d32f2f;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-line::before {
+    top: 20%;
+}
+
+/* adjust to align with first row text block */
+.timeline-line::after {
+    bottom: 20%;
+}
+
+/* adjust to align with second row text block */
+.testimonial-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-item {
+    width: 45%;
+    text-align: center;
+}
+
+.testimonial-item.left {
+    padding-right: 20px;
+}
+
+.testimonial-item.right {
+    padding-left: 20px;
+}
+
+.logo-wrapper {
+    margin-bottom: 20px;
+}
+
+.uni-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    padding: 5px;
+    background-color: #222;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-wrapper:hover .uni-logo {
+    transform: scale(1.1);
+    border-color: #d32f2f;
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.6);
+}
+
+.logo-wrapper:hover .uni-logo {
+    transform: rotate(360deg);
+    border-color: #d32f2f;
+}
+
+.quote {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.author {
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.author strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.9rem;
+}
+
+/* --- Community Outreach Section --- */
+.outreach {
+    padding: 80px 0;
+    color: #ccc;
+}
+
+.outreach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Text Side */
+.quote-icon {
+    color: var(--primary-red);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.drop-cap {
+    color: var(--primary-red);
+    font-size: 3rem;
+    float: left;
+    line-height: 0.8;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.outreach-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.author-byline {
+    margin-top: 30px;
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Gallery Side */
+.main-gallery-img {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.main-gallery-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(183, 28, 28, 0.9), transparent);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* dots alignment */
+.gallery-dots {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.gallery-dots .dot {
+    background-color: #333;
+    border: 1px solid #555;
+}
+
+.gallery-dots .dot.active {
+    background-color: var(--primary-red);
+    border-color: var(--primary-red);
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.dot.active {
+    background-color: #f00;
+}
+
+/* Thumbnails */
+.gallery-thumbs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.gallery-thumbs img {
+    width: 18%;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.gallery-thumbs img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gallery-thumbs img.active-thumb {
+    opacity: 1;
+    border: 2px solid var(--primary-red);
+    transform: scale(1.05);
+}
