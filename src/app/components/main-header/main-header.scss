@@ -14,14 +14,14 @@ header {
   background-color: rgba(22, 22, 23, 0.8);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-  
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  padding: 0 max(4vw, 24px); 
+
+  padding: 0 max(4vw, 24px);
   box-sizing: border-box;
 
   font-family: $apple-font;
@@ -34,7 +34,7 @@ header .header-image {
   width: auto;
   flex-shrink: 0;
   cursor: pointer;
-  margin-right: 40px; 
+  margin-right: 40px;
 }
 
 /* NAVIGATION */
@@ -42,7 +42,7 @@ header nav {
   flex-shrink: 0;
 }
 
-header nav > ul {
+header nav>ul {
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -79,7 +79,7 @@ header nav ul .nav-item .anchor {
 
   &:hover {
     color: $primary-red;
-    
+
     .dropdown-arrow {
       opacity: 1;
       transform: rotate(180deg);
@@ -104,7 +104,7 @@ header nav ul .nav-item .anchor {
   &:hover {
     .anchor {
       color: #ED1C24;
-      
+
       .dropdown-arrow {
         transform: rotate(180deg);
         opacity: 1;
@@ -125,31 +125,31 @@ header nav ul .nav-item .anchor {
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%) translateY(10px) scale(0.96);
-  
+
   min-width: 320px;
   display: flex;
   flex-direction: column;
   gap: 2px;
   padding: 5px;
-  
+
   background-color: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  
+
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  
-  box-shadow: 
+
+  box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.05),
     0 12px 32px -4px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(0, 0, 0, 0.03);
-  
+
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   z-index: 1000;
-  
-  transition: 
+
+  transition:
     opacity 0.2s ease,
     transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
     visibility 0.2s;
@@ -177,7 +177,7 @@ header nav ul .nav-item .anchor {
   align-items: center;
   justify-content: flex-start;
   text-align: left;
-  
+
   gap: 10px;
   padding: 8px 10px;
   border-radius: 8px;
@@ -201,7 +201,7 @@ header nav ul .nav-item .anchor {
     align-items: flex-start;
     justify-content: center;
     gap: 2px;
-    
+
     h1 {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       font-size: 14px;
@@ -226,12 +226,12 @@ header nav ul .nav-item .anchor {
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.04);
-    
+
     img {
       transform: scale(1.1);
       opacity: 1;
     }
-    
+
     .text-group h1 {
       color: #ED1C24;
     }
@@ -242,20 +242,20 @@ header nav ul .nav-item .anchor {
 .search-bar {
   display: flex;
   align-items: center;
-  
-  background-color: rgba(255, 255, 255, 0.1); 
+
+  background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid transparent;
-  
+
   height: 36px;
   border-radius: 18px;
   padding: 0 4px 0 16px;
-  
+
   width: 100%;
   max-width: 260px;
   min-width: 200px;
   flex-shrink: 1;
   margin-left: auto;
-  
+
   transition: all 0.2s ease;
 
   &:focus-within {
@@ -268,14 +268,14 @@ header nav ul .nav-item .anchor {
     flex-grow: 1;
     border: none;
     background: transparent;
-    
+
     font-family: $apple-font;
     font-size: 13px;
     color: #fff;
-    
+
     outline: none;
     min-width: 0;
-    
+
     &::placeholder {
       color: rgba(255, 255, 255, 0.5);
     }
@@ -312,16 +312,16 @@ header nav ul .nav-item .anchor {
     height: 60px;
     padding: 0 20px;
   }
-  
+
   header .header-image {
     height: 32px;
     margin-right: 24px;
   }
-  
+
   header nav ul {
     gap: 20px;
   }
-  
+
   .nav-item {
     height: 60px;
   }

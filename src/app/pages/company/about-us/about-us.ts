@@ -26,7 +26,7 @@ interface TimelineEvent {
   selector: 'about-us',
   imports: [MainHeader, MainFooter, CommonModule],
   templateUrl: './about-us.html',
-  styleUrls: ['./about-us.scss', './programs-section.scss'],
+  styleUrls: ['./about-us.scss'],
 })
 
 export class aboutUs implements OnInit, OnDestroy {
