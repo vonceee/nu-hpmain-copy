@@ -5,6 +5,10 @@
   display: block;
   font-family: 'Roboto', sans-serif;
   color: white;
+  background: linear-gradient(360deg,
+      rgba(80, 0, 0, 0.75) 0%,
+      rgba(20, 0, 0, 0.95) 50%,
+      #000000 100%);
 }
 
 .main-container {
@@ -21,15 +25,14 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
   background:
     linear-gradient(180deg,
-      rgba(0, 0, 0, 0.4) 0%, // Clearer top to see the image
-      rgba(20, 5, 5, 0.6) 60%, // Subtle transition
-      rgba(139, 0, 0, 0.9) 100% // Deep Brand Red at the bottom
-    ),
+      rgba(80, 0, 0, 0.75) 0%,
+      rgba(20, 0, 0, 0.85) 50%,
+      #000000 100%),
     url('/assets/images/home/234acacc5e5bd069189972b51d9bfeeade704003.jpg') center/cover no-repeat;
-
   background-attachment: fixed;
 
   .hero-content {
@@ -41,48 +44,43 @@
 
     .badge {
       display: inline-block;
-      background-color: color.$primary;
+      background-color: color.$primary400;
 
       color: white;
       padding: 8px 16px;
       border-radius: 99px;
 
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 400;
       letter-spacing: 0.05em;
-      text-transform: uppercase;
 
       margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(237, 28, 36, 0.3); // Glow effect matching the red
+      box-shadow: 0 4px 12px rgba(237, 28, 36, 0.3);
     }
 
-    // 3. "Big Bold" Typography
     h1 {
-      font-family: "Bebas Neue", sans-serif; // Keeping your font, but styling it like Apple Display
-      font-size: clamp(3.5rem, 6vw, 6rem); // Responsive scaling
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(3.5rem, 6vw, 6rem);
       line-height: 0.95;
-      font-weight: 400; // Bebas is naturally bold
+      font-weight: 400;
       margin: 0 0 16px 0;
       color: #ffffff;
 
       text-transform: uppercase;
-      letter-spacing: 1px; // Bebas needs room to breathe at large sizes
+      letter-spacing: 1px;
 
-      // Apple text depth
       text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
     .subtitle {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Roboto", sans-serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.85); // iOS Secondary Label Color (High contrast white)
-      max-width: 600px;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.85);
       margin: 0 auto;
 
-      // Better readability against the image
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
   }
@@ -101,7 +99,7 @@
   }
 }
 
-/* ˚◡˚ Navigation Tab (Apple Style Segmented Control) ˚◡˚ */
+/* ˚◡˚ Navigation Tab ˚◡˚ */
 
 .nav-tabs-container {
   width: 100%;
@@ -109,38 +107,31 @@
   justify-content: center;
   padding: 4vh 0;
   z-index: 10;
-  position: relative; // Ensure it sits above hero elements
+  position: relative;
+  margin-bottom: 2rem;
 
   .tabs-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 
-    // Apple "Track" Appearance
-    background-color: rgba(118, 118, 128, 0.24); // Standard iOS tertiary fill
-    backdrop-filter: blur(20px) saturate(180%); // "Thick material" effect
+    background-color: rgba(118, 118, 128, 0.24);
+    backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
 
-    padding: 4px; // Padding creates the "inset" look for the slider
-    border-radius: 99px; // Fully rounded pill shape
-    border: 0.5px solid rgba(255, 255, 255, 0.1); // Subtle border for contrast
-    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1); // Inner depth
+    padding: 4px;
+    border-radius: 99px;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
 
-    // The Sliding "Thumb"
     .nav-pill {
       position: absolute;
-      top: 4px; // Match padding of wrapper
-      bottom: 4px; // Match padding of wrapper
+      top: 4px;
+      bottom: 4px;
       border-radius: 99px;
       z-index: 1;
 
-      // Apple "Active" Appearance
-      background-color: color.$primary ;
-      box-shadow:
-        0 3px 8px rgba(0, 0, 0, 0.12),
-        0 3px 1px rgba(0, 0, 0, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-
+      background-color: color.$primary400;
       transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
       pointer-events: none;
     }
@@ -200,4 +191,152 @@
       }
     }
   }
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5vh;
+  margin-bottom: 4vh;
+}
+
+.title-badge {
+  width: min-content;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.tab-header {
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-wrap: nowrap;
+  z-index: 2;
+  position: relative;
+}
+
+.red-bar {
+  width: 105%;
+  height: 55%;
+  bottom: -0.2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border-radius: 4px;
+  z-index: 1;
+  background: linear-gradient(to right, #ED1C24, #871015);
+}
+
+/* ˚◡˚ Our Journey Section ˚◡˚ */
+
+.timeline-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  min-height: max-content;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #ED1C24, #FB2C36, #000000);
+  transform: translateX(-50%);
+  z-index: 1;
+  height: 100%;
+}
+
+.timeline-events {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4vh
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-item.left {
+  justify-content: flex-end;
+  padding-right: calc(50% + 40px);
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+  padding-left: calc(50% + 40px);
+}
+
+.timeline-item.left .timeline-content {
+  text-align: right;
+}
+
+.timeline-item.right .timeline-content {
+  text-align: right;
+}
+
+.timeline-content {
+  background: color.$secondaryAlpha10;
+  border: 1px solid color.$secondaryAlpha10;
+  border-radius: 12px;
+  padding: 24px 28px 0;
+  width: 100%;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-around;
+  gap: 1vh;
+}
+
+.year {
+  color: #ff0000;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.title {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 4vh 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background-color: #ff0000;
+  border: 3px solid #000;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.2);
+}
+
+.timeline-content:hover {
+  border-color: rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.timeline-dot:hover {
+  box-shadow: 0 0 0 6px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
