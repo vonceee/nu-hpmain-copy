@@ -153,19 +153,19 @@ export class aboutUs implements OnInit, OnDestroy {
       position: 'left'
     },
     {
-      year: '2000',
+      year: '2000s',
       title: 'Expansion Era',
       description: 'Partnered with leading global brands like Fischertechnik, De Lorenzo, and PHYWE to bring world-class educational solutions.',
       position: 'right'
     },
     {
-      year: '2010',
+      year: '2010s',
       title: 'Innovation Phase',
       description: 'Introduced robotics and automation solutions including VEX Robotics, Armatrol, and advanced manufacturing systems.',
       position: 'left'
     },
     {
-      year: '2020',
+      year: '2020s',
       title: 'Industry 4.0',
       description: 'Leading the transition to smart manufacturing and digital education with AI, IoT, and advanced automation.',
       position: 'right'
