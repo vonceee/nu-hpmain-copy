@@ -7,7 +7,7 @@
   color: white;
   background: linear-gradient(180deg,
       rgba(80, 0, 0, 0.25) 0%,
-      rgba(20, 0, 0, 0.65) 50%,
+      rgba(20, 0, 0, 0.65) 10%,
       #000000 100%);
 }
 
@@ -29,8 +29,8 @@
 
   background:
     linear-gradient(180deg,
-      rgba(80, 0, 0, 0.75) 0%,
-      rgba(20, 0, 0, 0.85) 50%,
+      rgba(80, 0, 0, 0.55) 0%,
+      rgba(20, 0, 0, 0.95) 80%,
       #000000 100%),
     url('/assets/images/home/234acacc5e5bd069189972b51d9bfeeade704003.jpg') center/cover no-repeat;
   background-attachment: fixed;
@@ -304,7 +304,6 @@
   color: #ff0000;
   font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .title {
@@ -339,4 +338,55 @@
 .timeline-dot:hover {
   box-shadow: 0 0 0 6px rgba(255, 0, 0, 0.3);
   transition: all 0.3s ease;
+}
+
+.distributorship {
+  width: 85vw;
+  height: max-content;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: color.$secondaryAlpha5;
+  border: 1px solid color.$secondaryAlpha10;
+  gap: 2vh;
+  padding: 2.5vh 0 4.5vh;
+  border-radius: 15px;
+  margin-top: 2.5vh;
+}
+
+.distributorship-logos {
+  position: relative;
+  justify-content: space-between;
+  align-content: space-between;
+  display: flex;
+  flex-direction: row;
+  width: 79vw;
+  height: 40vh;
+  margin: 0;
+
+  div {
+    width: 16.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: none;
+      max-height: none;
+      object-fit: none;
+      display: inline-block;
+      margin: 0;
+      filter: grayscale(100%);
+      transition: filter 0.5s ease;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
+  }
 }
