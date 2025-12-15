@@ -5,6 +5,7 @@ import { DOCUMENT, CommonModule } from '@angular/common';
 import { MainFooter } from 'src/app/components/main-footer/main-footer';
 import { MainHeader } from 'src/app/components/main-header/main-header';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface Testimonial {
   logo: string;
