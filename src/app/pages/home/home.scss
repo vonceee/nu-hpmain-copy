@@ -38,9 +38,19 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Improves readability on glass */
   margin: 0;
 }
+@media (max-width: 1304px) {
+  .glass-card {
+      margin-top: 20vh; /* Adjust position for mobile */
+  }
+}
+@media (max-width: 1000px) {
+  .glass-card {
+      margin-top: 40vh; /* Adjust position for mobile */
+  }
+}
 @media (max-width: 768px) {
   .glass-card {
-      margin-top: 150vh; /* Adjust position for mobile */
+      margin-top: 80vh; /* Adjust position for mobile */
       flex-direction: column; /* Stack div 2 and 3 vertically */
       padding: 25px;
   }
@@ -56,31 +66,63 @@
       margin-bottom: 20px;
   }
 }
-@media (max-width: 1180px) {
+@media (max-width: 456px) {
   .glass-card {
-    margin-top: 5vh; /* Adjust position for mobile */
+      margin-top: 100vh; /* Adjust position for mobile */
+      flex-direction: column; /* Stack div 2 and 3 vertically */
+      padding: 25px;
+  }
+
+  .card-column {
+      width: 100%; /* Full width on mobile */
+  }
+  
+  /* Optional: Add a divider line on mobile */
+  .card-column:first-child {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 20px;
+      margin-bottom: 20px;
   }
 }
-@media (max-width: 1100px) {
-  .glass-card {
-    margin-top: 10vh; /* Adjust position for mobile */
-  }
+.video-container {
+  position: relative;
+  display: inline-block;
 }
-@media (max-width: 1030px) {
-  .glass-card {
-    margin-top: 20vh; /* Adjust position for mobile */
-  }
+/* Position the play button in the center of the video */
+.circle-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it */
+  z-index: 10; /* Make sure it is above the video */
+  cursor: pointer; /* Make the button clickable */
 }
-@media (max-width: 930px) {
-  .glass-card {
-    margin-top: 30vh; /* Adjust position for mobile */
-  }
+
+/* Style for the play icon */
+.play-icon {
+  width: 100px; /* Adjust the size of the play button */
+  height: 100px;
 }
-@media (max-width: 830px) {
-  .glass-card {
-    margin-top: 40vh; /* Adjust position for mobile */
-  }
+
+.play-icon circle {
+  stroke: #fff;
+  stroke-width: 2px;
 }
+
+.play-icon polygon {
+  transition: opacity 0.3s ease;
+}
+
+/* Add a hover effect or interaction effect (optional) */
+.circle-play:hover .play-icon polygon {
+  opacity: 1;
+}
+
+.video-container video {
+  width: 100%; /* Make video full-width */
+  height: auto;
+}
+
 
 
 .headline{
@@ -101,28 +143,7 @@
   text-align: center;
 }
 
-.circle-play {
-  position: absolute;
-  top: 50%;
-  margin-left: 24%;
-  width: 120px;
-  height: 120px;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  border-radius: 50%;
-  transition: 0.3s ease;
-}
 
-.circle-play:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-/* SVG play icon */
-.play-icon {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
-}
 
 .mediumTitle{
   font-size: 16px;
@@ -372,17 +393,27 @@
 
 
 
+.carousel-section {
+  width: 100%;
+  overflow-x: hidden;     /* HARD STOP horizontal overflow */
+  position: relative;
+}
 
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 713px; /* Tinaasan ko konti para hindi siksik */
-  margin: auto;
+  max-width: 100%;
+  height: 713px;
+  margin: 0 auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 713px;
+
+  overflow: hidden;       /* CRITICAL */
+  box-sizing: border-box;
 }
+
 
 .testimonialTitle{
   font-size: 56px;
