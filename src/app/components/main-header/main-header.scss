@@ -1,9 +1,11 @@
+
+
 @use "text-display";
 @use "colors" as color;
 
 $apple-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-// Mobile-first breakpoints
+// mobile-first breakpoints
 $breakpoint-sm: 640px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
@@ -27,7 +29,7 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 clamp(1rem, 4vw, 1.5rem);
+  padding: 0 1rem;
   min-height: 3.5rem;
   box-sizing: border-box;
 
@@ -37,16 +39,16 @@ header {
 
 /* LOGO */
 header .header-image {
-  height: clamp(2rem, 5vw, 2.5rem);
+  height: clamp(1.75rem, 5vw, 2.5rem);
   width: auto;
   flex-shrink: 0;
   cursor: pointer;
-  margin-right: clamp(1rem, 3vw, 2.5rem);
+  margin-right: 0.5rem; 
 }
 
 /* HAMBURGER MENU BUTTON */
 .hamburger-menu {
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 1.75rem;
@@ -56,7 +58,7 @@ display: flex;
   cursor: pointer;
   padding: 0.25rem;
   z-index: 1001;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   transition: all 0.3s ease;
   flex-shrink: 0;
 
@@ -325,11 +327,10 @@ header nav ul .nav-item .anchor {
 
   height: 2.25rem;
   border-radius: 1.125rem;
-  padding: 0 0.25rem 0 1rem;
+  padding: 0 0.5rem 0 1rem;
 
   width: 100%;
-  max-width: clamp(10rem, 30vw, 12.5rem);
-  flex-shrink: 1;
+  flex: 1; 
   margin-left: auto;
 
   transition: all 0.2s ease;
@@ -360,18 +361,23 @@ header nav ul .nav-item .anchor {
 .search-button {
   width: 1.75rem;
   height: 1.75rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+  
+  /* MOBILE DEFAULT: transparent and no border */
+  background-color: transparent; 
+  border: none;
+  border-radius: 0;
+  
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: background-color 0.2s;
-  margin-left: 0.5rem;
+  transition: all 0.2s;
+  margin-left: 0.25rem;
 
   &:hover {
-    background-color: color.$primary500;
+    opacity: 0.7;
+    background-color: transparent;
   }
 
   img {
@@ -381,7 +387,7 @@ header nav ul .nav-item .anchor {
   }
 }
 
-/* --- TABLET BREAKPOINT (768px+) --- */
+/* --- TABLET & DESKTOP BREAKPOINT (768px+) --- */
 @media screen and (min-width: $breakpoint-md) {
   header {
     min-height: 4rem;
@@ -424,7 +430,7 @@ header nav ul .nav-item .anchor {
     font-size: 0.75rem;
   }
 
-  /* Desktop-style dropdowns for tablet+ */
+  /* desktop-style dropdowns for tablet+ */
   .has-dropdown {
     flex-direction: row;
     height: 100%;
@@ -528,15 +534,22 @@ header nav ul .nav-item .anchor {
   .search-bar {
     max-width: clamp(11.25rem, 20vw, 13.75rem);
     height: 2.25rem;
+    flex: 0 1 auto;
 
     &:focus-within {
       max-width: clamp(13.75rem, 22vw, 15rem);
     }
   }
 
+  /* DESKTOP SEARCH BUTTON: */
   .search-button {
-    width: 1.75rem;
-    height: 1.75rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    
+    &:hover {
+      background-color: color.$primary500;
+      opacity: 1; /* Reset opacity from mobile hover */
+    }
 
     img {
       width: 0.875rem;

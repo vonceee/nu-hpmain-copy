@@ -1,18 +1,6 @@
 <header>
   <img src="assets/icons/main-header/hytec-logo.svg" class="header-image" alt="Hytec Power Inc">
 
-  <!-- Hamburger Menu Button (Mobile Only) -->
-  <button 
-    class="hamburger-menu" 
-    [class.active]="isMobileMenuOpen"
-    (click)="toggleMobileMenu()"
-    attr.aria-label="{{ isMobileMenuOpen ? 'Close menu' : 'Open menu' }}"
-    aria-expanded="{{ isMobileMenuOpen }}">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-  </button>
-
   <nav [class.mobile-menu-open]="isMobileMenuOpen">
     <ul>
       <li class="nav-item">
@@ -132,4 +120,15 @@
       <img src="assets/icons/main-header/magnifying-glass.svg" alt="">
     </button>
   </div>
+
+  <button 
+    class="hamburger-menu" 
+    [class.active]="isMobileMenuOpen"
+    (click)="toggleMobileMenu()"
+    attr.aria-label="{{ isMobileMenuOpen ? 'Close menu' : 'Open menu' }}"
+    aria-expanded="{{ isMobileMenuOpen }}">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
 </header>
