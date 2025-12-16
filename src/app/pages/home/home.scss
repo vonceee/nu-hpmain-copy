@@ -748,88 +748,110 @@ $breakpoint-desktop: 1440px;
 // TESTIMONIAL SECTION
 // ============================================
 
+.testimonial-section {
+  position: relative;
+  width: 100%;
+  padding: 5vh 0 10vh 0;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-image 0.5s ease-in-out;
+  overflow: hidden; // prevent horizontal scrollbar from right-positioned cards
+}
+
+.testimonial-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-header {
+  margin-bottom: 2rem;
+  z-index: 10;
+}
+
+.carousel-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // Use min-height to accommodate content, but fixed enough for layout
+  height: 600px;
+
+  @include respond-to($breakpoint-mobile) {
+    height: 550px;
+  }
+}
+
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 713px;
-  /* Tinaasan ko konti para hindi siksik */
-  margin: auto;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 713px;
+  perspective: 1000px;
 }
 
 .testimonialTitle {
-  font-size: 56px;
-  line-height: 64px;
+  font-size: clamp(32px, 4vw, 56px);
+  line-height: 1.1;
   font-family: 'Bebas Neue', sans-serif;
-  color: #f4f4f4;
+  color: color.$secondary100;
   position: absolute;
-  top: 70px;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
-.xldisplay {
-  position: absolute;
-  top: 21px;
-  left: 21px;
-  font-size: 80px;
-  line-height: 1;
-  color: #ED1C24;
-  /* Yung kulay na nirequest mo */
-  font-family: 'Bebas Neue', sans-serif;
-  /* Para maganda yung quote mark */
-  margin-bottom: 10px;
-}
-
-.largeTitle {
-  font-size: 22px;
-  line-height: 28px;
-  font-family: 'Poppins', sans-serif;
-}
+// --- CARD STYLES ---
 
 .card {
   position: absolute;
+  // Responsive Widths
   width: 630px;
-  /* Pinalapad ko nang konti para sa text */
-  height: min-content;
-  /* Pinatangkad para kasya ang logo at text */
-  border-radius: 8px;
+  max-width: 90%;
 
-  /* Flexbox para maayos ang layout sa loob */
+  height: auto;
+  max-height: 450px;
+
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* Start from top */
   align-items: center;
-  padding: 65px 50px 20px 50px;
+  padding: 3.5rem 2rem 2rem 2rem;
   box-sizing: border-box;
-
-  /* Uniform White Background */
   background-color: rgba(255, 255, 255, 0.95);
   color: #333;
   text-align: center;
-
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  opacity: 0.8;
-  top: 64%;
-  margin-top: -190px;
-  /* Half of height */
   border: 1px solid rgba(255, 255, 255, 0.5);
+
+  @include respond-to($breakpoint-mobile) {
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+  }
 }
 
-/* --- INNER CONTENT STYLES --- */
-
 .card-logo {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -50px;
+  top: -40px;
 
   img {
     max-width: 100%;
@@ -838,67 +860,102 @@ $breakpoint-desktop: 1440px;
   }
 }
 
+.quote-icon {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 60px;
+  line-height: 1;
+  color: #ED1C24;
+  font-family: 'Bebas Neue', sans-serif;
+}
 
 .card-text {
-  line-height: 1.4;
-  color: #555;
+  flex-grow: 1;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   overflow-y: auto;
-  /* Scrollbar pag sobrang haba */
-  text-align: justify;
 
   .card-main-text {
-    font-size: 0.9em;
+    font-size: clamp(14px, 1.1vw, 16px);
     font-style: italic;
+    line-height: 1.6;
+    color: #444;
   }
 }
 
 .card-company {
   position: absolute;
-  bottom: -50px;
+  bottom: -40px;
   color: white;
+  width: 100%;
+  text-align: center;
+  padding: 0 1rem;
 
   .card-main-company {
-    font-size: 1em;
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 }
 
-.largeEmphasizedTitle {
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
+// --- POSITIONS & ANIMATIONS ---
 
-/* --- POSITIONS (No Tilt) --- */
-
-.left {
-  transform: translateX(-95%) scale(0.7);
-  /* Adjusted translation */
-  z-index: 1;
-}
-
+// Active Card
 .active {
-  transform: translateX(0) scale(1.1);
+  transform: translateX(0) scale(1);
   z-index: 10;
   opacity: 1;
   filter: blur(0);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
-.right {
-  transform: translateX(95%) scale(0.7);
-  /* Adjusted translation */
+// Left Card (Previous)
+.left {
+  transform: translateX(-60%) scale(0.8);
   z-index: 1;
+  opacity: 0.7;
+  filter: blur(1px);
+  cursor: pointer;
+
+  @include respond-to($breakpoint-mobile) {
+    transform: translateX(0) scale(0.9); // stack behind active on mobile
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
-/* --- NAVIGATION BUTTONS --- */
+// Right Card (Next)
+.right {
+  transform: translateX(60%) scale(0.8);
+  z-index: 1;
+  opacity: 0.7;
+  filter: blur(1px);
+  cursor: pointer;
+
+  @include respond-to($breakpoint-mobile) {
+    transform: translateX(0) scale(0.9); // stack behind active on mobile
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transform: scale(0.5);
+}
+
+// --- CONTROLS ---
+
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 20;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -908,72 +965,304 @@ $breakpoint-desktop: 1440px;
   justify-content: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  font-size: 1.5rem;
 
   &:hover {
-    background: rgba(237, 28, 36, 0.8); // Primary color
-    border-color: transparent;
+    background: #ED1C24;
+    border-color: #ED1C24;
     transform: translateY(-50%) scale(1.1);
   }
 
   &.prev-btn {
-    left: 0;
+    left: 5%;
+
+    @include respond-to($breakpoint-mobile) {
+      left: 10px;
+    }
   }
 
   &.next-btn {
-    right: 0;
-  }
+    right: 5%;
 
-  .arrow-icon {
-    width: 20px;
-    height: auto;
-
-    &.left-arrow {
-      transform: rotate(180deg);
-    }
-  }
-
-  @include respond-to($breakpoint-mobile) {
-    width: 40px;
-    height: 40px;
-
-    &.prev-btn {
-      left: -10px;
-    }
-
-    &.next-btn {
-      right: -10px;
+    @include respond-to($breakpoint-mobile) {
+      right: 10px;
     }
   }
 }
 
-/* --- INDICATORS --- */
 .indicators {
   position: absolute;
-  bottom: 60px;
+  bottom: 20px;
   left: 50%;
-  transform: translateX(-50%) scale(1.2);
+  transform: translateX(-50%);
   display: flex;
   gap: 12px;
   z-index: 30;
-  align-items: center;
 }
 
 .dot {
   width: 10px;
   height: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
   cursor: pointer;
-  transition: width 0.4s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
+
+  &.active {
+    width: 30px;
+    border-radius: 10px;
+    background-color: #ED1C24;
+  }
+
+  &:hover {
+    background-color: white;
+  }
 }
 
-.dot.active {
-  width: 40px;
-  background-color: #fff;
+// ============================================
+// SOCIAL MEDIA SECTION (1 Left, 2 Right Stacked)
+// ============================================
+
+.social-section {
+  position: relative;
+  width: 100%;
+  padding: 10vh 0;
+  background: #000;
+  overflow: hidden;
 }
 
-.dot:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+.social-bg-decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/home/home-body-bg.png');
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.social-container {
+  position: relative;
+  width: 85vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 2;
+
+  @include respond-to($breakpoint-tablet) {
+    width: 90%;
+  }
+}
+
+.social-header {
+  text-align: center;
+  margin-bottom: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+
+  .title-badge-container.centered {
+    align-items: center;
+  }
+
+  .social-description {
+    max-width: 600px;
+    color: color.$secondary100;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+// --- Mixed Layout Grid ---
+.social-grid-mixed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+  width: 100%;
+  height: 800px;
+
+  @include respond-to($breakpoint-tablet) {
+    height: auto; // allow growing on tablet/mobile
+    grid-template-columns: 1fr; // stack vertically
+    gap: 4vh;
+  }
+}
+
+// Left Main Card
+.social-embed-card.main-card {
+  height: 100%; // fill full 800px
+
+  @include respond-to($breakpoint-tablet) {
+    height: 600px; // taller on mobile for scrolling
+  }
+}
+
+// Right Stack Container
+.social-right-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw; // match grid gap
+  height: 100%;
+
+  @include respond-to($breakpoint-tablet) {
+    gap: 4vh;
+    height: auto;
+  }
+}
+
+// Right Sub Cards
+.social-embed-card.sub-card {
+  flex: 1; // take equal space (50% of height minus gap)
+  height: 100%;
+
+  @include respond-to($breakpoint-tablet) {
+    height: 400px; // Fixed height when stacked on mobile
+    flex: none;
+  }
+}
+
+// --- Card Styling (Shared) ---
+.social-embed-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(237, 28, 36, 0.15);
+  }
+
+  .embed-header {
+    background: #f4f4f4;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    .fb-icon {
+      color: #1877F2;
+      font-size: 18px;
+    }
+
+    .li-icon {
+      color: #0A66C2;
+      font-size: 18px;
+    }
+  }
+
+  .iframe-wrapper {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: black; // Change background to black to match
+
+    iframe {
+      border: none;
+      display: block;
+      // DEFAULT: Occupy full width (Perfect for YouTube, Maps, etc.)
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // --- Facebook Specific Override ---
+  // Only apply the 500px limit here
+  .iframe-wrapper.facebook-wrapper {
+    iframe {
+      width: 500px !important; // Restrict to Facebook's max width
+      max-width: 100% !important; // Ensure it doesn't break on small mobile screens
+    }
+  }
+}
+
+// ============================================
+// LINKEDIN CARD STYLES
+// ============================================
+
+.linkedin-card {
+  .linkedin-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    gap: 1.5rem;
+    background: linear-gradient(to bottom right, #ffffff, #f3f6f8);
+  }
+
+  .li-logo-wrapper {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .li-company-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .li-text-info {
+    .li-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #333;
+      margin: 0 0 5px 0;
+    }
+
+    .li-desc {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
+      margin: 0;
+      max-width: 250px;
+    }
+  }
+
+  .li-follow-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #0A66C2;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+
+    &:hover {
+      background-color: #004182;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(10, 102, 194, 0.4);
+    }
+  }
 }
 
 // ============================================

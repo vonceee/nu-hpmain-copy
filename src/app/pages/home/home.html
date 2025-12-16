@@ -152,45 +152,40 @@
         </div>
       </div>
 
-      <div class="carousel-section" [style.background-image]="currentBackgroundStyle">
+      <div class="carousel-section">
         <div class="carousel-container">
 
           <div class="testimonialTitle">
             colleges and universities testimonials
           </div>
-          <!-- Looping through cardData -->
-          <div class="card" *ngFor="let item of cardData; let i = index" [ngClass]="cardPositions[i]">
 
-            <!-- LOGO SECTION -->
+          <div class="card" *ngFor="let item of cardData; let i = index" [ngClass]="getCardClass(i)"
+            (click)="getCardClass(i) !== 'active' ? goToCard(i) : null">
+
             <div class="card-logo">
-              <!-- Siguraduhing tama ang path sa assets folder mo -->
-              <img [src]="item.logo" alt="Partner Logo">
+              <img [src]="item.logo" alt="Partner Logo" draggable="false">
             </div>
 
-            <!-- QUOTE ICON (Galing sa HTML mo) -->
-            <div class="xldisplay">“</div>
+            <div class="quote-icon">“</div>
 
-            <!-- TEXT CONTENT -->
-            <div class="card-text largeTitle">
+            <div class="card-text">
               <div class="card-main-text">
                 {{ item.text }}
               </div>
             </div>
 
-            <div class="card-company largeEmphasizedTitle">
+            <div class="card-company">
               <div class="card-main-company">
                 {{ item.company }}
               </div>
             </div>
           </div>
 
-          <!-- BUTTONS -->
           <button class="nav-btn prev-btn" (click)="prev()">&#10094;</button>
           <button class="nav-btn next-btn" (click)="next()">&#10095;</button>
 
-          <!-- INDICATORS -->
           <div class="indicators">
-            <div class="dot" *ngFor="let item of cardData; let i = index" [class.active]="cardPositions[i] === 'active'"
+            <div class="dot" *ngFor="let item of cardData; let i = index" [class.active]="i === activeIndex"
               (click)="goToCard(i)">
             </div>
           </div>
@@ -198,6 +193,80 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section class="social-section">
+    <div class="social-bg-decor"></div>
+    <div class="social-container">
+
+      <div class="social-header">
+        <div class="title-badge-container centered">
+          <div class="title-badge ldisplay">
+            <p class="ldisplay">Stay Connected</p>
+            <div class="red-bar"></div>
+          </div>
+        </div>
+        <p class="social-description mediumBody">
+          Follow us on our social media platforms for the latest updates, industrial news, and upcoming events.
+        </p>
+      </div>
+
+      <div class="social-grid-mixed">
+
+        <div class="social-embed-card main-card">
+          <div class="embed-header">
+            <fa-icon [icon]="faFacebookF" class="fb-icon"></fa-icon>
+            <span>Official Page</span>
+          </div>
+          <div class="iframe-wrapper facebook-wrapper">
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhytecpowerincorporated&tabs=timeline&width=500&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+              width="100%" height="100%" style="border:none; overflow:hidden;" scrolling="no" frameborder="0"
+              allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="social-right-stack">
+
+          <div class="social-embed-card sub-card">
+            <div class="embed-header">
+              <fa-icon [icon]="faYoutube" class="yt-icon"></fa-icon>
+              <span>YouTube Channel</span>
+            </div>
+            <div class="iframe-wrapper">
+              <iframe src="https://www.youtube.com/embed/cTTRrq_NlUs" width="100%" height="100%"
+                style="border:none; overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="social-embed-card sub-card linkedin-card">
+            <div class="embed-header">
+              <fa-icon [icon]="faLinkedinIn" class="li-icon"></fa-icon>
+              <span>Official LinkedIn</span>
+            </div>
+
+            <div class="linkedin-content">
+              <div class="li-logo-wrapper">
+                <img src="assets/images/home/HytecLogo.png" alt="Hytec Power Inc" class="li-company-logo">
+              </div>
+
+              <div class="li-text-info">
+                <h4 class="li-name">Hytec Power Inc.</h4>
+                <p class="li-desc">Leading industrial and educational solutions provider in the Philippines.</p>
+              </div>
+
+              <a href="https://ph.linkedin.com/company/hytec-power" target="_blank" class="li-follow-btn">
+                View Profile &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
