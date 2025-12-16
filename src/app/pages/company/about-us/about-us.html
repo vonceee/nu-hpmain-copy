@@ -24,7 +24,7 @@
   </div>
 </section>
 
-<div class="content-container">
+<section class="content-container">
   @if (tab() == 0) {
   <div class="title-badge">
     <p class="xldisplay tab-header">Our Journey</p>
@@ -39,7 +39,7 @@
     <div class="timeline-events">
       <div *ngFor="let event of events; let i = index" class="timeline-item" [ngClass]="event.position">
 
-        <div class="timeline-content">
+        <div class="timeline-box">
           <div class="mediumTitle year">{{ event.year }}</div>
           <div class="smallHeadline title">{{ event.title }}</div>
           <div class="largeBody description">{{ event.description }}</div>
@@ -49,7 +49,8 @@
       </div>
     </div>
   </div>
-  <div class="distributorship">
+
+  <section class="distributorship-container">
     <p class="smallHeadline">Gain Exclusive Distributorship</p>
     <p class="largeBody">Continuing to shape the future of technical education with cutting-edge technology and
       strategic partnerships.</p>
@@ -90,7 +91,7 @@
         <img src="assets/images/aboutus/distributionship/ewm.png" alt="">
       </div>
     </div>
-  </div>
+  </section>
   }
 
 
@@ -522,6 +523,7 @@
   <p class="mediumTitle white">From humble beginnings to becoming the Philippines' leading provider of industrial
     and educational solutions</p>
   }
-</div>
+
+</section>
 
 <main-footer></main-footer>
