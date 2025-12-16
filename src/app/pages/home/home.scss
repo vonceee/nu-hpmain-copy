@@ -232,21 +232,22 @@ $breakpoint-desktop: 1440px;
 
 .title-badge {
   width: min-content;
-  height: 50px;
+  // height: 50px; <-- Removed fixed height to allow auto-sizing
   padding: 0;
   margin: 0;
   position: relative;
+  z-index: 0; // Ensure stacking context for children
 }
 
 .red-bar {
   width: 105%;
   height: 55%;
-  bottom: -0.2vh;
+  bottom: 0px; // Changed from -0.2vh to 0 to align with bottom of text better
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
   border-radius: 4px;
-  z-index: 1;
+  z-index: -1; // Move behind text
   background: linear-gradient(to right, #ED1C24, #871015);
 }
 
