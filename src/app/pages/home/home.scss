@@ -517,6 +517,466 @@ $breakpoint-desktop: 1440px;
 }
 
 // ============================================
+// NEWS & UPDATES SECTION
+// ============================================
+.news-section {
+  position: relative;
+  width: 100%;
+  padding: 10vh 0;
+  display: flex;
+  justify-content: center;
+}
+
+.news-container {
+  width: 75vw;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+
+  @include respond-to($breakpoint-tablet) {
+    width: 85%;
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    width: 90%;
+  }
+}
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2vh;
+
+  .view-all-btn {
+    background: transparent;
+    border: 1px solid rgba(237, 28, 36, 0.5);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #ED1C24;
+      border-color: #ED1C24;
+    }
+
+    @include respond-to($breakpoint-mobile) {
+      display: none; // hide on mobile if space is tight
+    }
+  }
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; // left is slightly larger
+  gap: 4vw;
+
+  @include respond-to($breakpoint-tablet) {
+    grid-template-columns: 1fr; // stack on tablet/mobile
+    gap: 6vh;
+  }
+}
+
+// --- Featured News (Left) ---
+.featured-news {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.featured-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  .featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover .featured-img {
+    transform: scale(1.03);
+  }
+
+  .news-tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #ED1C24;
+    color: white;
+    padding: 4px 12px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+}
+
+.featured-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  color: white;
+
+  .news-title {
+    margin: 1vh 0;
+    line-height: 1;
+    color: white;
+
+    // limit to 2 lines
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-desc {
+    color: color.$secondary300;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 2vh;
+  }
+}
+
+.readmore-text-btn {
+  background: none;
+  border: none;
+  color: #ED1C24;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  width: max-content;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+// --- Latest News List (Right) ---
+.latest-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.news-item {
+  display: flex;
+  gap: 1.5vw;
+  padding: 2vh;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    flex-direction: column;
+    gap: 2vh;
+  }
+}
+
+.news-item-image {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+.news-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5vh;
+  color: white;
+
+  .news-item-title {
+    margin: 0;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-item-desc {
+    color: #A9A9A9;
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// ============================================
+// TESTIMONIAL SECTION
+// ============================================
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 713px;
+  /* Tinaasan ko konti para hindi siksik */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 713px;
+}
+
+.testimonialTitle {
+  font-size: 56px;
+  line-height: 64px;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #f4f4f4;
+  position: absolute;
+  top: 70px;
+}
+
+.xldisplay {
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  font-size: 80px;
+  line-height: 1;
+  color: #ED1C24;
+  /* Yung kulay na nirequest mo */
+  font-family: 'Bebas Neue', sans-serif;
+  /* Para maganda yung quote mark */
+  margin-bottom: 10px;
+}
+
+.largeTitle {
+  font-size: 22px;
+  line-height: 28px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  position: absolute;
+  width: 630px;
+  /* Pinalapad ko nang konti para sa text */
+  height: min-content;
+  /* Pinatangkad para kasya ang logo at text */
+  border-radius: 8px;
+
+  /* Flexbox para maayos ang layout sa loob */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Start from top */
+  align-items: center;
+  padding: 65px 50px 20px 50px;
+  box-sizing: border-box;
+
+  /* Uniform White Background */
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  text-align: center;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0.8;
+  top: 64%;
+  margin-top: -190px;
+  /* Half of height */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* --- INNER CONTENT STYLES --- */
+
+.card-logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -50px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+
+.card-text {
+  line-height: 1.4;
+  color: #555;
+  overflow-y: auto;
+  /* Scrollbar pag sobrang haba */
+  text-align: justify;
+
+  .card-main-text {
+    font-size: 0.9em;
+    font-style: italic;
+  }
+}
+
+.card-company {
+  position: absolute;
+  bottom: -50px;
+  color: white;
+
+  .card-main-company {
+    font-size: 1em;
+  }
+}
+
+.largeEmphasizedTitle {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- POSITIONS (No Tilt) --- */
+
+.left {
+  transform: translateX(-95%) scale(0.7);
+  /* Adjusted translation */
+  z-index: 1;
+}
+
+.active {
+  transform: translateX(0) scale(1.1);
+  z-index: 10;
+  opacity: 1;
+  filter: blur(0);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.right {
+  transform: translateX(95%) scale(0.7);
+  /* Adjusted translation */
+  z-index: 1;
+}
+
+/* --- NAVIGATION BUTTONS --- */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+
+  &:hover {
+    background: rgba(237, 28, 36, 0.8); // Primary color
+    border-color: transparent;
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  &.prev-btn {
+    left: 0;
+  }
+
+  &.next-btn {
+    right: 0;
+  }
+
+  .arrow-icon {
+    width: 20px;
+    height: auto;
+
+    &.left-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    width: 40px;
+    height: 40px;
+
+    &.prev-btn {
+      left: -10px;
+    }
+
+    &.next-btn {
+      right: -10px;
+    }
+  }
+}
+
+/* --- INDICATORS --- */
+.indicators {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%) scale(1.2);
+  display: flex;
+  gap: 12px;
+  z-index: 30;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: width 0.4s ease, background-color 0.3s ease;
+}
+
+.dot.active {
+  width: 40px;
+  background-color: #fff;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+// ============================================
 // SHARED COMPONENTS
 // ============================================
 

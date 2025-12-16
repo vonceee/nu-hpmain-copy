@@ -91,6 +91,116 @@
     </div>
   </section>
 
+  <!-- ============================================ -->
+  <!-- NEWS SECTION -->
+  <!-- ============================================ -->
+  <section class="news-section">
+    <div class="news-container">
+
+      <div class="news-header">
+        <div class="title-badge-container">
+          <div class="title-badge ldisplay">
+            <p class="ldisplay">News & Updates</p>
+            <div class="red-bar"></div>
+          </div>
+        </div>
+        <button class="view-all-btn">VIEW ALL</button>
+      </div>
+
+      <div class="news-grid">
+
+        <div class="featured-news">
+          <div class="featured-image-wrapper">
+            <img [src]="featuredNews.image" [alt]="featuredNews.title" class="featured-img" draggable="false">
+            <div class="news-tag">FEATURED</div>
+          </div>
+
+          <div class="featured-content">
+            <span class="news-date largeBody accent-text">{{ featuredNews.date }}</span>
+            <h3 class="news-title xldisplay">{{ featuredNews.title }}</h3>
+            <p class="news-desc mediumBody">{{ featuredNews.description }}</p>
+            <button class="readmore-text-btn">READ MORE &rarr;</button>
+          </div>
+        </div>
+
+        <div class="latest-news-list">
+          <div class="news-item" *ngFor="let item of latestNewsList">
+            <div class="news-item-image">
+              <img [src]="item.image" [alt]="item.title" draggable="false">
+            </div>
+            <div class="news-item-content">
+              <span class="news-date smallBody accent-text">{{ item.date }}</span>
+              <h4 class="news-item-title largeEmphasizedTitle">{{ item.title }}</h4>
+              <p class="news-item-desc smallBody">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section" [style.background]="currentBackgroundStyle">
+    <div class="testimonial-container">
+
+      <div class="testimonial-header">
+        <div class="title-badge-container centered">
+          <div class="title-badge ldisplay">
+            <p class="ldisplay">Testimonials</p>
+            <div class="red-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-section" [style.background-image]="currentBackgroundStyle">
+        <div class="carousel-container">
+
+          <div class="testimonialTitle">
+            colleges and universities testimonials
+          </div>
+          <!-- Looping through cardData -->
+          <div class="card" *ngFor="let item of cardData; let i = index" [ngClass]="cardPositions[i]">
+
+            <!-- LOGO SECTION -->
+            <div class="card-logo">
+              <!-- Siguraduhing tama ang path sa assets folder mo -->
+              <img [src]="item.logo" alt="Partner Logo">
+            </div>
+
+            <!-- QUOTE ICON (Galing sa HTML mo) -->
+            <div class="xldisplay">“</div>
+
+            <!-- TEXT CONTENT -->
+            <div class="card-text largeTitle">
+              <div class="card-main-text">
+                {{ item.text }}
+              </div>
+            </div>
+
+            <div class="card-company largeEmphasizedTitle">
+              <div class="card-main-company">
+                {{ item.company }}
+              </div>
+            </div>
+          </div>
+
+          <!-- BUTTONS -->
+          <button class="nav-btn prev-btn" (click)="prev()">&#10094;</button>
+          <button class="nav-btn next-btn" (click)="next()">&#10095;</button>
+
+          <!-- INDICATORS -->
+          <div class="indicators">
+            <div class="dot" *ngFor="let item of cardData; let i = index" [class.active]="cardPositions[i] === 'active'"
+              (click)="goToCard(i)">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </main>
 
 <main-footer></main-footer>
