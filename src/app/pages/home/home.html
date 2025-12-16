@@ -21,52 +21,53 @@
 
     <div class="who_we_are-container">
       <div class="who_we_are-box">
-        <!-- Video Player -->
-        <div class="centervideo video-container">
-          <video id="myVideo" preload="none" poster="assets/images/home/tumbnail.png">
-            <source src="assets/videos/HytecMainVideo.mp4" type="video/mp4">
-          </video>
-          <div class="circle-play" id="playButton">
-            <svg viewBox="0 0 512 512" class="play-icon">
-              <circle cx="256" cy="256" r="240" fill="url(#grad)" />
-              <polygon points="200,150 380,256 200,362" fill="white" opacity="0.9" />
-              <defs>
-                <radialGradient id="grad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="rgba(255,255,255,0.6)" />
-                  <stop offset="100%" stop-color="rgba(255,0,0,0.4)" />
-                </radialGradient>
-              </defs>
-            </svg>
+        <!-- Company Logo with Looping Video -->
+        <div class="company-logo-container">
+          <div class="logo-circle" id="videoThumbnail">
+            <!-- Video Thumbnail/Poster -->
+            <img src="assets/images/home/thumbnail.png" alt="Video Thumbnail" class="video-thumbnail">
+
+            <!-- Play Button Overlay -->
+            <div class="play-button-overlay">
+              <svg viewBox="0 0 512 512" class="play-icon">
+                <circle cx="256" cy="256" r="240" fill="url(#grad)" />
+                <polygon points="200,150 380,256 200,362" fill="white" opacity="0.9" />
+                <defs>
+                  <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="rgba(255,255,255,0.6)" />
+                    <stop offset="100%" stop-color="rgba(255,0,0,0.4)" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
           </div>
         </div>
 
-        <!-- Description -->
-        <div class="centerdesc">
-          <div class="title-badge">
-            <p class="ldisplay">WHO WE ARE</p>
+        <div class="title-badge-container">
+          <div class="title-badge ldisplay">
+            <p class="ldisplay">Who We Are</p>
             <div class="red-bar"></div>
           </div>
 
           <p class="who_we_are-description">
-            We started this journey with only the desire to build a better industry and future, now the responsibility
-            we have on our hands is more than what we have ever imagined, and we are prepared to face the challenges no
+            We started this journey with only the desire to build a better industry and future. Now, the responsibility
+            we have on our hands is more than what we have ever imagined and we are prepared to face the challenges no
             matter how heavy or difficult it may be.
           </p>
 
           <p class="who_we_are-description">
-            The companys own endeavors are not the only ideals held important, hytec power inc wants to ensure that the
-            help provided serves to inspire filipinos to strive for their own goals in developing a prosperous and
+            The company's own endeavors are not the only ideals held important. Hytec Power Inc wants to ensure that the
+            help provided serves to inspire Filipino to strive for their own goals in developing a prosperous and
             globally competitive society.
           </p>
 
           <p class="who_we_are-description">
             We took the opportunity to provide further assistance to educational institutions in making their programs
-            relevant with industry needs, providing new technologies, pioneering new industrial processes, and 21st
+            relevant with industry needs. Providing new technologies, pioneering new industrial processes, and 21st
             didactic practices.
           </p>
 
-
-          <button class="mediumEmphasizedTitle readmore">Read More</button>
+          <button class="readmore-btn">READ MORE</button>
         </div>
 
         <!-- Decorative Images -->
@@ -81,8 +82,8 @@
   <!-- ============================================ -->
   <!-- ACHIEVEMENT SECTION -->
   <!-- ============================================ -->
-  <section class="achievement">
-    <div class="achievementMain">
+  <section class="achievement-section">
+    <div class="achievement-container">
       <div *ngFor="let item of achievementList">
         <p class="xxldisplay accent-text">{{ item.value }}</p>
         <p class="smallEmphasizedHeadline">{{ item.label }}</p>
@@ -90,169 +91,51 @@
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- NEWS SECTION -->
-  <!-- ============================================ -->
-  <section class="news-section">
-    <img src="assets/images/home/Ray.png" class="ray-bg" alt="">
-
-    <div class="content">
-      <!-- Header -->
-      <div class="contentTitle">
-        <div class="title-badge">
-          <p class="ldisplay">LATEST HPI NEWS</p>
-          <div class="red-bar"></div>
-        </div>
-      </div>
-
-      <!-- News Grid -->
-      <div class="news-container">
-        <!-- Featured News -->
-        <article class="featured-column">
-          <img [src]="featuredNews.image" class="featured-img" alt="Featured News">
-          <p class="largeEmphasizedTitle mt-1">{{ featuredNews.title }}</p>
-          <p class="mediumBody mt-1">{{ featuredNews.date }}</p>
-          <hr>
-          <p class="largeBody mainNews">{{ featuredNews.description }}</p>
-          <div class="btn-container">
-            <button class="mediumEmphasizedTitle readmore">Read More</button>
-          </div>
-        </article>
-
-        <!-- News List -->
-        <div class="list-column">
-          <article class="list-item" *ngFor="let news of latestNewsList">
-            <div class="list-img-wrapper">
-              <img [src]="news.image" class="full-img" alt="News Image">
-            </div>
-
-            <div class="list-text-wrapper">
-              <div class="list-header">
-                <p class="mediumEmphasizedTitle">{{ news.title }}</p>
-                <p class="mediumBody">{{ news.date }}</p>
-              </div>
-              <hr>
-              <p class="mediumBody news">{{ news.description }}</p>
-              <div class="btn-container">
-                <button class="smallEmphasizedTitle smallreadmore">Read More</button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- TESTIMONIALS CAROUSEL -->
-  <!-- ============================================ -->
-  <section class="carousel-section" [style.background-image]="currentBackgroundStyle">
-    <div class="carousel-container">
-      <h2 class="testimonialTitle">colleges and universities testimonials</h2>
-
-      <!-- Cards -->
-      <article class="card" *ngFor="let item of cardData; let i = index" [ngClass]="cardPositions[i]">
-
-        <div class="card-logo">
-          <img [src]="item.logo" alt="Partner Logo">
-        </div>
-
-        <div class="xldisplay">"</div>
-
-        <div class="card-text largeTitle">
-          <div class="card-main-text">{{ item.text }}</div>
-        </div>
-
-        <div class="card-company largeEmphasizedTitle">
-          <div class="card-main-company">{{ item.company }}</div>
-        </div>
-      </article>
-
-      <!-- Navigation -->
-      <button class="nav-btn prev-btn" (click)="prev()" aria-label="Previous testimonial">&#10094;</button>
-      <button class="nav-btn next-btn" (click)="next()" aria-label="Next testimonial">&#10095;</button>
-
-      <!-- Indicators -->
-      <div class="indicators">
-        <div class="dot" *ngFor="let item of cardData; let i = index" [class.active]="cardPositions[i] === 'active'"
-          (click)="goToCard(i)" [attr.aria-label]="'Go to testimonial ' + (i + 1)">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================ -->
-  <!-- SOCIAL MEDIA SECTION -->
-  <!-- ============================================ -->
-  <section class="beMore">
-    <div class="beMore-main">
-      <div class="title-badge">
-        <p class="ldisplay">BE MORE UPDATED</p>
-        <div class="red-bar"></div>
-      </div>
-
-      <div class="beMore-content">
-        <!-- Facebook -->
-        <div class="facebook-mobile">
-          <div class="fb-wrapper">
-            <iframe
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhytecpowerincorporated&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-              scrolling="no" frameborder="0" allowfullscreen="true"
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook Page">
-            </iframe>
-          </div>
-        </div>
-
-        <!-- Other Social Media -->
-        <div class="other-socmed">
-          <div class="youtube">
-            <iframe src="https://www.youtube.com/embed/cTTRrq_NlUs?si=IZbqa1s4ZGwFFUtH" title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-          </div>
-
-          <div class="instagram">
-            <a href="https://www.instagram.com/hytecpowerinc_official" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/home/instagram.png" alt="Visit our Instagram">
-            </a>
-          </div>
-
-          <div class="linkedin">
-            <a href="https://www.linkedin.com/company/hytec-power" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/home/linkedin-social1.png" alt="Visit our LinkedIn">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <main-footer></main-footer>
 
 <script>
-  // video player functionality
-  const video = document.getElementById('myVideo');
-  const playButton = document.getElementById('playButton');
+  // Video Modal Functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const videoThumbnail = document.getElementById('videoThumbnail');
+    const videoModal = document.getElementById('videoModal');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeVideoBtn = document.getElementById('closeVideoBtn');
+    const modalVideo = document.getElementById('modalVideo');
 
-  if (video && playButton) {
-    playButton.addEventListener('click', () => {
-      video.setAttribute('controls', '');
-      video.play();
-      playButton.style.display = 'none';
-    });
+    // open video modal
+    if (videoThumbnail) {
+      videoThumbnail.addEventListener('click', function () {
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // prevent background scrolling
+        modalVideo.play();
+      });
+    }
 
-    video.addEventListener('pause', () => {
-      if (!video.ended) {
-        playButton.style.display = 'block';
+    // close video modal function
+    function closeModal() {
+      videoModal.classList.remove('active');
+      document.body.style.overflow = ''; // restore scrolling
+      modalVideo.pause();
+      modalVideo.currentTime = 0; // reset video to beginning
+    }
+
+    // close on X button click
+    if (closeVideoBtn) {
+      closeVideoBtn.addEventListener('click', closeModal);
+    }
+
+    // close on overlay click
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', closeModal);
+    }
+
+    // close on ESC key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+        closeModal();
       }
     });
-
-    video.addEventListener('ended', () => {
-      playButton.style.display = 'block';
-      video.removeAttribute('controls');
-    });
-  }
+  });
 </script>

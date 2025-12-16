@@ -32,7 +32,7 @@ $breakpoint-desktop: 1440px;
   padding: 0;
   margin: 0;
   min-height: 60vh;
-  
+
   @include respond-to($breakpoint-mobile) {
     min-height: 50vh;
   }
@@ -43,7 +43,7 @@ $breakpoint-desktop: 1440px;
   display: block;
   height: auto;
   object-fit: cover;
-  
+
   @include respond-to($breakpoint-mobile) {
     min-height: 50vh;
     object-fit: cover;
@@ -87,7 +87,7 @@ $breakpoint-desktop: 1440px;
     padding: 0;
     white-space: normal;
     word-wrap: break-word;
-    
+
     @include respond-to($breakpoint-mobile) {
       line-height: 1;
       letter-spacing: -0.5px;
@@ -99,7 +99,7 @@ $breakpoint-desktop: 1440px;
     padding: 0;
     white-space: normal;
     word-wrap: break-word;
-    
+
     @include respond-to($breakpoint-mobile) {
       margin-top: 1vh;
       line-height: 1.3;
@@ -116,6 +116,7 @@ $breakpoint-desktop: 1440px;
   display: flex;
   justify-content: center;
   padding: 10vh 0;
+  overflow: hidden;
 }
 
 .section-bg {
@@ -123,6 +124,8 @@ $breakpoint-desktop: 1440px;
   z-index: 0;
   top: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .decor-img-1 {
@@ -161,11 +164,22 @@ $breakpoint-desktop: 1440px;
   }
 }
 
+.decor-img-4 {
+  opacity: 0.5;
+  position: absolute;
+  width: 60vw;
+  top: -35vh;
+  left: -25vw;
+  z-index: -2;
+}
+
 .who_we_are-container {
   height: max-content;
-  width: 60vw;
+  width: 75vw;
+  max-width: 1400px;
   position: relative;
   display: flex;
+  z-index: 1;
 
   @include respond-to($breakpoint-tablet) {
     width: 85%;
@@ -179,87 +193,32 @@ $breakpoint-desktop: 1440px;
 .who_we_are-box {
   height: max-content;
   width: 100%;
-  border: 1px solid #ed1c235a;
-  background: linear-gradient(to bottom, rgb(237, 28, 36, 0.2), rgb(237, 28, 36, 0.05));
-  backdrop-filter: blur(2px) saturate(120%);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(237, 28, 35, 0.35);
+  background: linear-gradient(135deg, rgba(237, 28, 36, 0.15), rgba(237, 28, 36, 0.05));
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  border-radius: 2vh;
-  padding: 5rem;
+  justify-content: space-between;
+  border-radius: 24px;
+  padding: 5rem 4rem;
+  gap: 4rem;
 
   @include respond-to($breakpoint-tablet) {
     flex-direction: column;
     gap: 4vh;
-    padding: 3vh 4vw;
+    padding: 4vh 5vw;
   }
 
   @include respond-to($breakpoint-mobile) {
     padding: 3vh 5vw;
+    gap: 3vh;
   }
 }
 
-.who_we_are-description {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 200;
-  line-height: 24px;
-}
-
-.centervideo {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45%;
-  max-width: 500px;
-
-  @include respond-to($breakpoint-tablet) {
-    width: 80%;
-  }
-
-  @include respond-to($breakpoint-mobile) {
-    width: 100%;
-  }
-
-  video {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-}
-
-.circle-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 120px;
-  height: 120px;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  border-radius: 50%;
-  transition: 0.3s ease;
-
-  @include respond-to($breakpoint-mobile) {
-    width: 80px;
-    height: 80px;
-  }
-
-  &:hover {
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-}
-
-.play-icon {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
-}
-
-.centerdesc {
+.title-badge-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -271,36 +230,263 @@ $breakpoint-desktop: 1440px;
   }
 }
 
-.readmore,
-.smallreadmore {
-  width: max-content;
-  background-color: #ed1c241a;
-  padding: 1vh 2vh;
-  border-radius: 0.5vh;
-  border: 1px solid #ED1C24;
-  color: white;
+.title-badge {
+  width: min-content;
+  height: 50px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.red-bar {
+  width: 105%;
+  height: 55%;
+  bottom: -0.2vh;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  border-radius: 4px;
+  z-index: 1;
+  background: linear-gradient(to right, #ED1C24, #871015);
+}
+
+.company-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 35%;
+  max-width: 400px;
+
+  @include respond-to($breakpoint-tablet) {
+    width: 60%;
+    max-width: 300px;
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    width: 70%;
+  }
+}
+
+.logo-circle {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(237, 28, 36, 0.3);
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 
   &:hover {
-    color: #ED1C24;
-    background-color: rgba(237, 28, 36, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(237, 28, 36, 0.6),
+      0 0 80px rgba(237, 28, 36, 0.3);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg,
+        rgba(237, 28, 36, 0.6),
+        rgba(255, 100, 100, 0.4),
+        transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+// Play Button Overlay
+.play-button-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.play-icon {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s ease;
+
+  @include respond-to($breakpoint-mobile) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.logo-circle:hover .play-icon {
+  transform: scale(1.1);
+}
+
+// Video Modal Styles
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &.active {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+.video-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 10000;
+  animation: modalSlideIn 0.4s ease;
+
+  @include respond-to($breakpoint-tablet) {
+    width: 95%;
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    width: 95%;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.video-close-btn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: rgba(237, 28, 36, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10001;
+
+  &:hover {
+    background: rgba(237, 28, 36, 1);
+    transform: rotate(90deg) scale(1.1);
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    top: -45px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; // 16:9 aspect ratio
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.readmore-btn {
+  align-self: flex-start;
+  padding: 12px 32px;
+  border: 1.5px solid rgba(237, 28, 36, 0.6);
+  background: transparent;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover {
+    background: rgba(237, 28, 36, 0.2);
+    border-color: rgba(237, 28, 36, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(237, 28, 36, 0.3);
+  }
+
+  @include respond-to($breakpoint-mobile) {
+    padding: 10px 24px;
+    font-size: 12px;
   }
 }
 
 // ============================================
 // ACHIEVEMENT SECTION
 // ============================================
-.achievement {
+.achievement-section {
   width: 100%;
   background: linear-gradient(to bottom, #ed1c2335, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4vh 0;
+  padding-top: 8vh;
 }
 
-.achievementMain {
+.achievement-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 3vw;
@@ -333,11 +519,6 @@ $breakpoint-desktop: 1440px;
 // ============================================
 // SHARED COMPONENTS
 // ============================================
-.title-badge {
-  width: min-content;
-  height: 50px;
-  position: relative;
-}
 
 .ldisplay {
   color: white;
@@ -350,501 +531,4 @@ $breakpoint-desktop: 1440px;
   @include respond-to($breakpoint-mobile) {
     font-size: clamp(24px, 5vw, 48px);
   }
-}
-
-.red-bar {
-  width: 103%;
-  height: 55%;
-  bottom: -0.2vh;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  border-radius: 4px;
-  z-index: 1;
-  background: linear-gradient(to right, #ED1C24, #871015);
-}
-
-// ============================================
-// NEWS SECTION
-// ============================================
-.news-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10vh 0;
-  position: relative;
-}
-
-.ray-bg {
-  opacity: 0.5;
-  position: absolute;
-  width: 60vw;
-  top: -35vh;
-  left: -25vw;
-  z-index: -2;
-}
-
-.content {
-  position: relative;
-  z-index: 10;
-  width: 84vw;
-  border: 1px solid #ed1c235a;
-  background: linear-gradient(to bottom, rgb(237, 28, 36, 0.2), rgb(237, 28, 36, 0.05));
-  backdrop-filter: blur(10px) saturate(120%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
-  gap: 3vh;
-  padding: 2vh 2vw 4vh;
-
-  @include respond-to($breakpoint-mobile) {
-    width: 90vw;
-    padding: 2vh 4vw 4vh;
-  }
-}
-
-.contentTitle {
-  width: 100%;
-  height: 7.5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.news-container {
-  display: flex;
-  width: 90%;
-  gap: 3vw;
-
-  @include respond-to($breakpoint-tablet) {
-    flex-direction: column;
-    width: 95%;
-    gap: 4vh;
-  }
-}
-
-.featured-column {
-  flex: 1;
-  min-width: 0;
-  color: white;
-}
-
-.featured-img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  margin-bottom: 2vh;
-}
-
-.mainNews,
-.news {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.mainNews {
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-}
-
-.news {
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-}
-
-.list-column {
-  flex: 1.5;
-  display: flex;
-  flex-direction: column;
-  gap: 3vh;
-}
-
-.list-item {
-  display: flex;
-  gap: 1.5vw;
-  color: white;
-
-  @include respond-to($breakpoint-mobile) {
-    flex-direction: column;
-    gap: 2vh;
-    padding-bottom: 2vh;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-}
-
-.list-img-wrapper {
-  flex-shrink: 0;
-  width: 200px;
-
-  @include respond-to($breakpoint-mobile) {
-    width: 100%;
-  }
-}
-
-.full-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.list-text-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-}
-
-.btn-container {
-  margin-top: auto;
-  display: flex;
-  justify-content: flex-end;
-}
-
-// ============================================
-// CAROUSEL SECTION
-// ============================================
-.carousel-section {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  transition: background 0.5s ease-in-out;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: 713px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-
-  @include respond-to($breakpoint-mobile) {
-    height: 600px;
-  }
-}
-
-.testimonialTitle {
-  font-family: 'Bebas Neue', sans-serif;
-  color: #f4f4f4;
-  position: absolute;
-  top: 70px;
-  text-align: center;
-  width: 100%;
-  padding: 0 2rem;
-
-  @include respond-to($breakpoint-mobile) {
-    top: 40px;
-  }
-}
-
-.card {
-  position: absolute;
-  width: 85%;
-  max-width: 630px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 65px 50px 20px;
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #333;
-  text-align: center;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  top: 50%;
-  transform: translateY(-50%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-
-  @include respond-to($breakpoint-mobile) {
-    padding: 50px 25px 20px;
-    max-width: 90%;
-  }
-
-  &.left,
-  &.right {
-    opacity: 0;
-    pointer-events: none;
-
-    @include respond-to(1200px) {
-      transform: translateY(-50%) scale(0.7);
-      opacity: 0.6;
-    }
-  }
-
-  &.left {
-    transform: translateY(-50%) translateX(-110%) scale(0.7);
-  }
-
-  &.active {
-    transform: translateY(-50%) scale(1.05);
-    z-index: 10;
-    opacity: 1;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-
-    @include respond-to($breakpoint-mobile) {
-      transform: translateY(-50%) scale(1);
-    }
-  }
-
-  &.right {
-    transform: translateY(-50%) translateX(110%) scale(0.7);
-  }
-}
-
-.xldisplay {
-  position: absolute;
-  top: 21px;
-  left: 21px;
-  font-size: clamp(60px, 8vw, 80px);
-  line-height: 1;
-  color: #ED1C24;
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-.card-logo {
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -50px;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-}
-
-.card-text {
-  line-height: 1.6;
-  color: #555;
-  max-height: 300px;
-  overflow-y: auto;
-  text-align: justify;
-  padding: 0 10px;
-
-  .card-main-text {
-    font-style: italic;
-  }
-}
-
-.card-company {
-  position: absolute;
-  bottom: -50px;
-  color: white;
-  width: 100%;
-  padding: 0 10px;
-}
-
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.5rem;
-  z-index: 20;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-
-  @include respond-to($breakpoint-mobile) {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-
-  &:hover {
-    transform: translateY(-50%) scale(1.15);
-    color: color.$primary300;
-    background: rgba(255, 255, 255, 0.3);
-  }
-
-  &.prev-btn {
-    left: 30px;
-
-    @include respond-to($breakpoint-mobile) {
-      left: 10px;
-    }
-  }
-
-  &.next-btn {
-    right: 30px;
-
-    @include respond-to($breakpoint-mobile) {
-      right: 10px;
-    }
-  }
-}
-
-.indicators {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  z-index: 30;
-
-  @include respond-to($breakpoint-mobile) {
-    bottom: 40px;
-  }
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  cursor: pointer;
-  transition: width 0.4s ease, background-color 0.3s ease;
-
-  &.active {
-    width: 40px;
-    background-color: #fff;
-  }
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-}
-
-// ============================================
-// SOCIAL MEDIA SECTION
-// ============================================
-.beMore {
-  width: 100%;
-  padding: 10vh 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.beMore-main {
-  width: 85%;
-  padding: 3vh 2vw;
-  background: linear-gradient(to top, rgba(237, 28, 36, 0.03), rgba(237, 28, 36, 0.15));
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3vh;
-  backdrop-filter: blur(14px) saturate(120%);
-  -webkit-backdrop-filter: blur(14px) saturate(120%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-
-  @include respond-to($breakpoint-mobile) {
-    width: 90%;
-    padding: 3vh 4vw;
-  }
-}
-
-.beMore-content {
-  width: 95%;
-  display: flex;
-  gap: 2vw;
-
-  @include respond-to($breakpoint-tablet) {
-    flex-direction: column;
-    gap: 3vh;
-  }
-}
-
-.facebook-mobile {
-  flex: 2;
-  min-width: 300px;
-
-  @include respond-to($breakpoint-tablet) {
-    min-width: unset;
-  }
-}
-
-.fb-wrapper {
-  width: 100%;
-  height: 600px;
-  border-radius: 8px;
-  overflow: hidden;
-
-  @include respond-to($breakpoint-mobile) {
-    height: 500px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 8px;
-  }
-}
-
-.other-socmed {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 2vh;
-}
-
-.youtube {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 10px;
-  overflow: hidden;
-
-  iframe {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.instagram,
-.linkedin {
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  a {
-    display: block;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-      opacity: 0.9;
-    }
-  }
-}
-
-// ============================================
-// UTILITY CLASSES
-// ============================================
-.mt-1 {
-  margin-top: 1vh;
-}
-
-.cursor {
-  cursor: pointer;
 }
