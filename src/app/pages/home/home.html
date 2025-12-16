@@ -8,7 +8,8 @@
     <img src="assets/images/home/home-top-bg.png" alt="Hero Background" class="hero-bg" draggable="false">
     <div class="headline">
       <p class="xxldisplay" style="margin: 0;">RELIABLE PARTNER AND SOLUTION PROVIDER</p>
-      <p class="largeEmphasizedTitle" style="margin: 0;">The leading industrial and educational solutions provider in the Philippines</p>
+      <p class="largeEmphasizedTitle" style="margin: 0;">The leading industrial and educational solutions provider in
+        the Philippines</p>
     </div>
   </section>
 
@@ -17,7 +18,7 @@
   <!-- ============================================ -->
   <section class="who_we_are-section">
     <img src="assets/images/home/home-body-bg.png" class="section-bg" draggable="false" alt="Background">
-    
+
     <div class="who_we_are-container">
       <div class="who_we_are-box">
         <!-- Video Player -->
@@ -45,22 +46,33 @@
             <p class="ldisplay">WHO WE ARE</p>
             <div class="red-bar"></div>
           </div>
-          
-          <p class="mediumTitle">
-            We started this journey with only the desire to build a better industry and future. Now, the responsibility we have on our hands is more than what we have ever imagined and we are prepared to face the challenges no matter how heavy or difficult it may be.
-            <br><br>
-            The company's own endeavors are not the only ideals held important. Hytec Power Inc wants to ensure that the help provided serves to inspire Filipino to strive for their own goals in developing a prosperous and globally competitive society.
-            <br><br>
-            We took the opportunity to provide further assistance to educational institutions in making their programs relevant with industry needs. Providing new technologies, pioneering new industrial processes, and 21st didactic practices.
+
+          <p class="who_we_are-description">
+            We started this journey with only the desire to build a better industry and future, now the responsibility
+            we have on our hands is more than what we have ever imagined, and we are prepared to face the challenges no
+            matter how heavy or difficult it may be.
           </p>
-          
+
+          <p class="who_we_are-description">
+            The companys own endeavors are not the only ideals held important, hytec power inc wants to ensure that the
+            help provided serves to inspire filipinos to strive for their own goals in developing a prosperous and
+            globally competitive society.
+          </p>
+
+          <p class="who_we_are-description">
+            We took the opportunity to provide further assistance to educational institutions in making their programs
+            relevant with industry needs, providing new technologies, pioneering new industrial processes, and 21st
+            didactic practices.
+          </p>
+
+
           <button class="mediumEmphasizedTitle readmore">Read More</button>
         </div>
 
         <!-- Decorative Images -->
         <img src="assets/images/home/Subtract.png" class="decor-img-1" draggable="false" alt="">
       </div>
-      
+
       <img src="assets/images/home/Container.png" class="decor-img-2" draggable="false" alt="">
       <img src="assets/images/home/Large.png" class="decor-img-3" draggable="false" alt="">
     </div>
@@ -83,7 +95,7 @@
   <!-- ============================================ -->
   <section class="news-section">
     <img src="assets/images/home/Ray.png" class="ray-bg" alt="">
-    
+
     <div class="content">
       <!-- Header -->
       <div class="contentTitle">
@@ -113,7 +125,7 @@
             <div class="list-img-wrapper">
               <img [src]="news.image" class="full-img" alt="News Image">
             </div>
-            
+
             <div class="list-text-wrapper">
               <div class="list-header">
                 <p class="mediumEmphasizedTitle">{{ news.title }}</p>
@@ -137,23 +149,20 @@
   <section class="carousel-section" [style.background-image]="currentBackgroundStyle">
     <div class="carousel-container">
       <h2 class="testimonialTitle">colleges and universities testimonials</h2>
-      
+
       <!-- Cards -->
-      <article 
-        class="card"
-        *ngFor="let item of cardData; let i = index"
-        [ngClass]="cardPositions[i]">
-        
+      <article class="card" *ngFor="let item of cardData; let i = index" [ngClass]="cardPositions[i]">
+
         <div class="card-logo">
           <img [src]="item.logo" alt="Partner Logo">
         </div>
-        
+
         <div class="xldisplay">"</div>
-        
+
         <div class="card-text largeTitle">
           <div class="card-main-text">{{ item.text }}</div>
         </div>
-        
+
         <div class="card-company largeEmphasizedTitle">
           <div class="card-main-company">{{ item.company }}</div>
         </div>
@@ -165,12 +174,8 @@
 
       <!-- Indicators -->
       <div class="indicators">
-        <div
-          class="dot"
-          *ngFor="let item of cardData; let i = index"
-          [class.active]="cardPositions[i] === 'active'"
-          (click)="goToCard(i)"
-          [attr.aria-label]="'Go to testimonial ' + (i + 1)">
+        <div class="dot" *ngFor="let item of cardData; let i = index" [class.active]="cardPositions[i] === 'active'"
+          (click)="goToCard(i)" [attr.aria-label]="'Go to testimonial ' + (i + 1)">
         </div>
       </div>
     </div>
@@ -185,18 +190,15 @@
         <p class="ldisplay">BE MORE UPDATED</p>
         <div class="red-bar"></div>
       </div>
-      
+
       <div class="beMore-content">
         <!-- Facebook -->
         <div class="facebook-mobile">
           <div class="fb-wrapper">
-            <iframe 
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhytecpowerincorporated&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-              scrolling="no" 
-              frameborder="0" 
-              allowfullscreen="true" 
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              title="Facebook Page">
+            <iframe
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhytecpowerincorporated&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+              scrolling="no" frameborder="0" allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook Page">
             </iframe>
           </div>
         </div>
@@ -204,22 +206,19 @@
         <!-- Other Social Media -->
         <div class="other-socmed">
           <div class="youtube">
-            <iframe 
-              src="https://www.youtube.com/embed/cTTRrq_NlUs?si=IZbqa1s4ZGwFFUtH" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
+            <iframe src="https://www.youtube.com/embed/cTTRrq_NlUs?si=IZbqa1s4ZGwFFUtH" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
           </div>
-          
+
           <div class="instagram">
             <a href="https://www.instagram.com/hytecpowerinc_official" target="_blank" rel="noopener noreferrer">
               <img src="assets/images/home/instagram.png" alt="Visit our Instagram">
             </a>
           </div>
-          
+
           <div class="linkedin">
             <a href="https://www.linkedin.com/company/hytec-power" target="_blank" rel="noopener noreferrer">
               <img src="assets/images/home/linkedin-social1.png" alt="Visit our LinkedIn">

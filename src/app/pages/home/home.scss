@@ -202,6 +202,13 @@ $breakpoint-desktop: 1440px;
   }
 }
 
+.who_we_are-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 24px;
+}
+
 .centervideo {
   position: relative;
   display: flex;
@@ -253,7 +260,6 @@ $breakpoint-desktop: 1440px;
 }
 
 .centerdesc {
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
