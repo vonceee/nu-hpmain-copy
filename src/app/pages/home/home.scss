@@ -231,25 +231,9 @@ $breakpoint-desktop: 1440px;
   }
 }
 
-.title-badge {
-  width: min-content;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  z-index: 0;
-}
 
-.red-bar {
-  width: 105%;
-  height: 55%;
-  bottom: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  border-radius: 4px;
-  z-index: -1;
-  background: linear-gradient(to right, #ED1C24, #871015);
-}
+
+
 
 .company-logo-container {
   display: flex;

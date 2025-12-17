@@ -12,10 +12,12 @@ interface Testimonial {
   company: string;
 }
 
+import { TitleBadge } from 'src/app/components/title-badge/title-badge';
+
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MainFooter, MainHeader, FontAwesomeModule],
+  imports: [CommonModule, MainFooter, MainHeader, FontAwesomeModule, TitleBadge],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

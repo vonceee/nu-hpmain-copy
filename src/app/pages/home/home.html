@@ -7,8 +7,9 @@
   <section class="hero-section">
     <img src="assets/images/home/home-top-bg.png" alt="Hero Background" class="hero-bg" draggable="false">
     <div class="headline">
-      <p class="xxldisplay" style="margin: 0;">RELIABLE PARTNER AND SOLUTION PROVIDER</p>
-      <p class="largeEmphasizedTitle" style="margin: 0;">The leading industrial and educational solutions provider in
+      <p class="header-lg" style="margin: 0;">RELIABLE PARTNER AND SOLUTION PROVIDER</p>
+      <p class="text-lg text-bold icon-text" style="margin: 0; text-align: center;">The leading industrial and
+        educational solutions provider in
         the Philippines</p>
     </div>
   </section>
@@ -44,12 +45,9 @@
         </div>
 
         <div class="title-badge-container">
-          <div class="title-badge ldisplay">
-            <p class="ldisplay">Who We Are</p>
-            <div class="red-bar"></div>
-          </div>
+          <title-badge title="Who We Are"></title-badge>
 
-          <p class="who_we_are-description">
+          <p class="text-md">
             We started this journey with only the desire to build a better industry and future. Now, the responsibility
             we have on our hands is more than what we have ever imagined and we are prepared to face the challenges no
             matter how heavy or difficult it may be.
@@ -66,8 +64,10 @@
             relevant with industry needs. Providing new technologies, pioneering new industrial processes, and 21st
             didactic practices.
           </p>
+          <div>
+            <button class="btn btn-md btn-outline-red-fill">READ MORE</button>
 
-          <button class="btn_xs btn_xs-primary">READ MORE</button>
+          </div>
         </div>
 
         <!-- Decorative Images -->
@@ -85,8 +85,8 @@
   <section class="achievement-section">
     <div class="achievement-container">
       <div *ngFor="let item of achievementList">
-        <p class="xxldisplay accent-text">{{ item.value }}</p>
-        <p class="smallEmphasizedHeadline">{{ item.label }}</p>
+        <p class="header-lg accent-text">{{ item.value }}</p>
+        <p class="text-lg text-bold text-center">{{ item.label }}</p>
       </div>
     </div>
   </section>
@@ -99,10 +99,7 @@
 
       <div class="news-header">
         <div class="title-badge-container">
-          <div class="title-badge ldisplay">
-            <p class="ldisplay">News & Updates</p>
-            <div class="red-bar"></div>
-          </div>
+          <title-badge title="News & Updates"></title-badge>
         </div>
         <button class="view-all-btn">VIEW ALL</button>
       </div>
@@ -116,9 +113,9 @@
           </div>
 
           <div class="featured-content">
-            <span class="news-date largeBody accent-text">{{ featuredNews.date }}</span>
-            <h3 class="news-title xldisplay">{{ featuredNews.title }}</h3>
-            <p class="news-desc mediumBody">{{ featuredNews.description }}</p>
+            <span class="text-md accent-text">{{ featuredNews.date }}</span>
+            <h3 class="header-md news-title">{{ featuredNews.title }}</h3>
+            <p class="text-md news-desc">{{ featuredNews.description }}</p>
             <button class="readmore-text-btn">READ MORE &rarr;</button>
           </div>
         </div>
@@ -129,9 +126,9 @@
               <img [src]="item.image" [alt]="item.title" draggable="false">
             </div>
             <div class="news-item-content">
-              <span class="news-date smallBody accent-text">{{ item.date }}</span>
-              <h4 class="news-item-title largeEmphasizedTitle">{{ item.title }}</h4>
-              <p class="news-item-desc smallBody">{{ item.description }}</p>
+              <span class="text-sm accent-text">{{ item.date }}</span>
+              <h4 class="news-item-title text-lg text-bold">{{ item.title }}</h4>
+              <p class="news-item-desc text-sm">{{ item.description }}</p>
             </div>
           </div>
         </div>
@@ -145,10 +142,7 @@
 
       <div class="testimonial-header">
         <div class="title-badge-container centered">
-          <div class="title-badge ldisplay">
-            <p class="ldisplay">Testimonials</p>
-            <div class="red-bar"></div>
-          </div>
+          <title-badge title="Testimonials"></title-badge>
         </div>
       </div>
 
@@ -202,12 +196,9 @@
 
       <div class="social-header">
         <div class="title-badge-container centered">
-          <div class="title-badge ldisplay">
-            <p class="ldisplay">Stay Connected</p>
-            <div class="red-bar"></div>
-          </div>
+          <title-badge title="Stay Connected"></title-badge>
         </div>
-        <p class="social-description mediumBody">
+        <p class="social-description text-md">
           Follow us on our social media platforms for the latest updates, industrial news, and upcoming events.
         </p>
       </div>

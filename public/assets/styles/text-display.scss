@@ -5,7 +5,6 @@
 // BREAKPOINTS
 // ============================================
 $breakpoint-mobile: 768px;
-$breakpoint-tablet: 1024px;
 
 @mixin respond-to($breakpoint) {
   @media (max-width: $breakpoint) {
@@ -14,272 +13,12 @@ $breakpoint-tablet: 1024px;
 }
 
 // ============================================
-// DISPLAY STYLES (Bebas Neue)
-// ============================================
-.xxldisplay {
-  font-size: clamp(40px, 8vw, 100px);
-  line-height: clamp(40px, 7vw, 80px);
-  font-family: 'Bebas Neue', sans-serif;
-  
-  @include respond-to($breakpoint-mobile) {
-    font-size: clamp(32px, 10vw, 50px);
-    line-height: clamp(32px, 9vw, 48px);
-  }
-}
-
-.xldisplay {
-  font-size: clamp(48px, 7vw, 80px);
-  line-height: clamp(48px, 6vw, 64px);
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-.ldisplay {
-  font-size: clamp(32px, 5vw, 56px);
-  line-height: clamp(40px, 5.5vw, 64px);
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-.mdisplay {
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: clamp(36px, 4.5vw, 52px);
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-.sdisplay {
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: clamp(32px, 3.5vw, 44px);
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-.xsdisplay {
-  font-size: clamp(20px, 2.5vw, 28px);
-  line-height: clamp(28px, 3vw, 36px);
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-// ============================================
-// HEADLINE STYLES (Poppins)
-// ============================================
-.largeHeadline {
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: clamp(32px, 3.5vw, 40px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.largeEmphasizedHeadline {
-  font-size: clamp(24px, 3vw, 32px);
-  line-height: clamp(32px, 3.5vw, 40px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-.mediumHeadline {
-  font-size: clamp(20px, 2.5vw, 28px);
-  line-height: clamp(28px, 3vw, 36px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.mediumEmphasizedHeadline {
-  font-size: clamp(20px, 2.5vw, 28px);
-  line-height: clamp(28px, 3vw, 36px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-.smallHeadline {
-  font-size: clamp(18px, 2vw, 24px);
-  line-height: clamp(26px, 2.5vw, 32px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.smallEmphasizedHeadline {
-  font-size: clamp(18px, 2vw, 24px);
-  line-height: clamp(26px, 2.5vw, 32px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-// ============================================
-// TITLE STYLES (Poppins)
-// ============================================
-.largeTitle {
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: clamp(24px, 2.2vw, 26px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.largeEmphasizedTitle {
-  font-size: clamp(14px, 2vw, 22px);
-  line-height: clamp(20px, 2.2vw, 26px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  
-  @include respond-to($breakpoint-mobile) {
-    font-size: clamp(12px, 3.5vw, 16px);
-    line-height: clamp(18px, 4.5vw, 22px);
-  }
-}
-
-.mediumTitle {
-  font-size: clamp(14px, 1.5vw, 16px);
-  line-height: clamp(20px, 2vw, 24px);
-  font-family: 'Poppins', sans-serif;
-  white-space: normal; // Changed from nowrap for better mobile experience
-  
-  @include respond-to($breakpoint-mobile) {
-    white-space: normal;
-  }
-}
-
-.mediumEmphasizedTitle {
-  font-size: clamp(14px, 1.5vw, 16px);
-  line-height: clamp(20px, 2vw, 24px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  white-space: normal;
-  
-  @include respond-to($breakpoint-mobile) {
-    white-space: normal;
-  }
-}
-
-.smallTitle {
-  font-size: clamp(12px, 1.2vw, 14px);
-  line-height: clamp(18px, 1.8vw, 20px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.smallEmphasizedTitle {
-  font-size: clamp(12px, 1.2vw, 14px);
-  line-height: clamp(18px, 1.8vw, 20px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-// ============================================
-// BODY STYLES (Poppins)
-// ============================================
-.largeBody {
-  font-size: clamp(14px, 1.5vw, 16px);
-  line-height: clamp(22px, 2vw, 24px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.largeEmphasizedBody {
-  font-size: clamp(14px, 1.5vw, 16px);
-  line-height: clamp(22px, 2vw, 24px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-.mediumBody {
-  font-size: clamp(12px, 1.2vw, 14px);
-  line-height: clamp(18px, 1.8vw, 20px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.mediumEmphasizedBody {
-  font-size: clamp(12px, 1.2vw, 14px);
-  line-height: clamp(18px, 1.8vw, 20px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-.smallBody {
-  font-size: clamp(11px, 1vw, 12px);
-  line-height: clamp(15px, 1.5vw, 16px);
-  font-family: 'Poppins', sans-serif;
-}
-
-.smallEmphasizedBody {
-  font-size: clamp(11px, 1vw, 12px);
-  line-height: clamp(15px, 1.5vw, 16px);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-// ============================================
-// TITLE STYLES - INTER FONT
-// ============================================
-.largeTitleInter {
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: clamp(24px, 2.2vw, 26px);
-  font-family: 'Inter', sans-serif;
-}
-
-.largeEmphasizedTitleInter {
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: clamp(24px, 2.2vw, 26px);
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-}
-
-.mediumTitleInter {
-  font-size: clamp(14px, 1.5vw, 16px);
-  line-height: clamp(20px, 2vw, 24px);
-  font-family: 'Inter', sans-serif;
-}
-
-.mediumEmphasizedTitleInter {
-  font-size: clamp(14px, 1.5vw, 16px);
-  line-height: clamp(20px, 2vw, 24px);
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-}
-
-.smallTitleInter {
-  font-size: clamp(12px, 1.2vw, 14px);
-  line-height: clamp(18px, 1.8vw, 20px);
-  font-family: 'Inter', sans-serif;
-}
-
-.smallEmphasizedTitleInter {
-  font-size: clamp(12px, 1.2vw, 14px);
-  line-height: clamp(18px, 1.8vw, 20px);
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-}
-
-// ============================================
 // UTILITY CLASSES
 // ============================================
-.text-wrap {
-  white-space: normal !important;
-  word-wrap: break-word;
+.text-bold {
+  font-weight: 600 !important;
 }
 
-.text-nowrap {
-  white-space: nowrap;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-// Responsive text alignment
-.text-center-mobile {
-  @include respond-to($breakpoint-mobile) {
-    text-align: center;
-  }
-}
-
-.text-left-mobile {
-  @include respond-to($breakpoint-mobile) {
-    text-align: left;
-  }
-}
-
-// ============================================
-// ACCENT COLORS
-// ============================================
 .accent-text {
   color: #ED1C24;
 }
@@ -293,43 +32,55 @@ $breakpoint-tablet: 1024px;
 }
 
 // ============================================
-// RESPONSIVE ADJUSTMENTS
+// HEADER STYLES (Bebas Neue)
 // ============================================
-@include respond-to($breakpoint-mobile) {
-  // Remove fixed line heights on very small screens for better readability
-  .xxldisplay,
-  .xldisplay,
-  .ldisplay,
-  .mdisplay,
-  .sdisplay,
-  .xsdisplay {
-    line-height: 1.1;
-  }
 
-  .largeHeadline,
-  .largeEmphasizedHeadline,
-  .mediumHeadline,
-  .mediumEmphasizedHeadline,
-  .smallHeadline,
-  .smallEmphasizedHeadline {
-    line-height: 1.3;
-  }
+// Large Header (Hero)
+.header-lg {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 8vw, 100px);
+  line-height: 1;
+  margin: 0;
+}
 
-  .largeTitle,
-  .largeEmphasizedTitle,
-  .mediumTitle,
-  .mediumEmphasizedTitle,
-  .smallTitle,
-  .smallEmphasizedTitle {
-    line-height: 1.4;
-  }
+// Medium Header (Section Titles)
+.header-md {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  margin: 0;
+}
 
-  .largeBody,
-  .largeEmphasizedBody,
-  .mediumBody,
-  .mediumEmphasizedBody,
-  .smallBody,
-  .smallEmphasizedBody {
-    line-height: 1.5;
-  }
+// Small Header (Card Titles, Badges)
+.header-sm {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+  margin: 0;
+}
+
+
+// ============================================
+// BODY TEXT STYLES (Poppins)
+// ============================================
+
+// Large Text (Subtitles, Lead)
+.text-lg {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(18px, 2vw, 24px); // Increased to stand out
+  line-height: 1.4;
+}
+
+// Medium Text (Standard Body)
+.text-md {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.6;
+}
+
+// Small Text (Captions, Details)
+.text-sm {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(12px, 1.2vw, 14px);
+  line-height: 1.5;
 }
