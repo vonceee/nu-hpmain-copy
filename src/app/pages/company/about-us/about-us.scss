@@ -9,6 +9,7 @@
       rgba(80, 0, 0, 0.25) 0%,
       rgba(20, 0, 0, 0.65) 10%,
       #000000 100%);
+  overflow-x: hidden; //para hindi mag overflow ceo picture
 }
 
 .main-container {
@@ -794,7 +795,9 @@
 }
 
 
-.content {
+/* ⋆｡˚ ୨୧ ˚｡⋆ Our President & CEO ⋆｡˚ ୨୧ ˚｡⋆ */
+
+.content{
   position: relative;
   width: 73%;
   height: max-content;
@@ -811,7 +814,7 @@
     left: 1.8vw;
   }
 
-  .message-container {
+  .OPCmessage-container {
     max-width: 71%;
     text-wrap: wrap;
     text-align: justify;
@@ -826,34 +829,44 @@
     width: 28%;
   }
 
+  /* Hide on mobile */
+  @media (max-width: 768px) {
+    .ceo {
+      display: none;
+    }
+  }
+
   .achievements {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding-top: 4vh;
+    gap: 2rem;
+    padding-top: 2rem;
 
     .container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      gap: 1vh;
+      gap: 1rem;
+      flex: 1;
 
       .achievement-container {
         display: flex;
-        align-items: center;
-        gap: 1vh;
+        align-items: flex-start; // fixes multiline alignment
+        gap: 0.6rem;
+        line-height: 1.4;
 
         .red-dot {
-          height: 1vh;
-          width: 1vh;
+          width: 6px;
+          height: 6px;
           background-color: #ED1C24;
           border-radius: 50%;
+          margin-top: 0.45em; // aligns with first line of text
+          flex-shrink: 0;
         }
       }
     }
   }
-}
 
+}
 .attributes {
   background-color: color.$secondaryAlpha5;
   border: 1px solid color.$secondaryAlpha10;
@@ -866,7 +879,7 @@
   padding: 7vh 2vw;
   margin-top: 3vh;
 
-  .contents {
+  .contents{
     color: white;
     display: flex;
     flex-direction: column;
@@ -877,15 +890,16 @@
       width: 5.5vw;
     }
 
-    .message {
+    .message{
       display: flex;
       flex-direction: column;
       text-align: center;
-      gap: 2vh;
+      gap:2vh;
 
-      p {
+      p{
         margin: 0;
       }
     }
   }
 }
+
