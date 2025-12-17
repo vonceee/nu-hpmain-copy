@@ -1,5 +1,6 @@
 @use "text-display";
 @use "colors" as color;
+@use "buttons" as button;
 
 // ============================================
 // MIXINS & VARIABLES
@@ -232,22 +233,21 @@ $breakpoint-desktop: 1440px;
 
 .title-badge {
   width: min-content;
-  // height: 50px; <-- Removed fixed height to allow auto-sizing
   padding: 0;
   margin: 0;
   position: relative;
-  z-index: 0; // Ensure stacking context for children
+  z-index: 0;
 }
 
 .red-bar {
   width: 105%;
   height: 55%;
-  bottom: 0px; // Changed from -0.2vh to 0 to align with bottom of text better
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
   border-radius: 4px;
-  z-index: -1; // Move behind text
+  z-index: -1;
   background: linear-gradient(to right, #ED1C24, #871015);
 }
 
@@ -448,31 +448,8 @@ $breakpoint-desktop: 1440px;
   }
 }
 
-.readmore-btn {
-  align-self: flex-start;
-  padding: 12px 32px;
-  border: 1.5px solid rgba(237, 28, 36, 0.6);
-  background: transparent;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-
-  &:hover {
-    background: rgba(237, 28, 36, 0.2);
-    border-color: rgba(237, 28, 36, 0.8);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(237, 28, 36, 0.3);
-  }
-
-  @include respond-to($breakpoint-mobile) {
-    padding: 10px 24px;
-    font-size: 12px;
-  }
+.who_we_are-description {
+  font-weight: 200;
 }
 
 // ============================================

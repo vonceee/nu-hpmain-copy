@@ -8,5 +8,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './side-buttons.html',
   styleUrl: './side-buttons.scss'
 })
+
 export class SideButtons {
+  active: 'cart' | 'chart' | null = null;
+
+  setActive(type: 'cart' | 'chart') {
+    this.active = type;
+  }
+
+  clearActive() {
+    this.active = null;
+  }
 }
