@@ -1,13 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Home } from './pages/home/home';
-import { Industrial } from './pages/solutions/industrial/industrial';
-import { Educational } from './pages/solutions/educational/educational';
-import { aboutUs } from "./pages/company/about-us/about-us";
+import { SideButtons } from './components/side-buttons/side-buttons'; // Import component
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, SideButtons], // Add to imports
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

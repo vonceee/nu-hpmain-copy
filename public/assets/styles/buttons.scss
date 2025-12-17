@@ -1,0 +1,74 @@
+.btn_xs {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Primary Red */
+.btn_xs-primary {
+    background-color: var(--c-red-primary);
+    color: var(--c-white);
+}
+
+/* Dark Red */
+.btn_xs-primary-dark {
+    background-color: var(--c-red-dark);
+    color: var(--c-white);
+}
+
+/* Grey (Disabled look) */
+.btn_xs-secondary {
+    background-color: var(--c-grey-light);
+    color: var(--c-white);
+}
+
+/* Dark Grey */
+.btn_xs-neutral {
+    background-color: var(--c-grey-dark);
+    color: var(--c-white);
+}
+
+/* White Outline */
+.btn_xs-outline-white {
+    background-color: transparent;
+    border: 1px solid var(--c-white);
+    color: var(--c-white);
+}
+
+/* White Filled (Inverted) */
+.btn_xs-white {
+    background-color: var(--c-white);
+    color: var(--c-red-primary);
+}
+
+/* Dark Fill / Red Border / White Text */
+.btn_xs-outline-red-fill {
+    background-color: var(--c-dark-fill);
+    border: 1px solid var(--c-red-primary);
+    color: var(--c-white);
+}
+
+/*Dark Fill / Red Border / Red Text */
+.btn_xs-outline-red-ghost {
+    background-color: var(--c-dark-fill);
+    border: 1px solid var(--c-red-primary);
+    color: var(--c-red-primary);
+    opacity: 0.8;
+}
+
+.btn_xs:hover {
+    filter: brightness(1.1);
+}
+
+.btn_xs:active {
+    transform: scale(0.98);
+}

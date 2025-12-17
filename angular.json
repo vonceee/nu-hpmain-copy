@@ -31,7 +31,9 @@
               "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["public/assets/styles/"]
+              "includePaths": [
+                "public/assets/styles/"
+              ]
             }
           },
           "configurations": {
@@ -76,9 +78,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-
-            ],
+            "polyfills": [],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
