@@ -3,13 +3,13 @@
 
 :host {
   display: block;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bebas', sans-serif;
   color: white;
   background: linear-gradient(180deg,
       rgba(80, 0, 0, 0.25) 0%,
       rgba(20, 0, 0, 0.65) 10%,
       #000000 100%);
-  overflow-x: hidden;
+  overflow-x: hidden; //para hindi mag overflow ceo picture
 }
 
 .main-container {
@@ -797,105 +797,9 @@
 }
 
 
-.content {
-  position: relative;
-  width: 73%;
-  height: max-content;
-  border: 1px solid color.$secondaryAlpha10;
-  padding: 8vh 0 5vh;
-  border-radius: 12px;
-  background-color: color.$secondaryAlpha5;
-
-  .quote {
-    color: color.$primaryAlpha50;
-    position: absolute;
-    line-height: 0;
-    margin: 0;
-    left: 1.8vw;
-  }
-
-  .message-container {
-    max-width: 71%;
-    text-wrap: wrap;
-    text-align: justify;
-    margin-left: 3vw;
-  }
-
-  .ceo {
-    position: absolute;
-    bottom: -1.4vh;
-    right: -2.5vw;
-    margin: 0%;
-    width: 28%;
-  }
-
-  .achievements {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 4vh;
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1vh;
-
-      .achievement-container {
-        display: flex;
-        align-items: center;
-        gap: 1vh;
-
-        .red-dot {
-          height: 1vh;
-          width: 1vh;
-          background-color: #ED1C24;
-          border-radius: 50%;
-        }
-      }
-    }
-  }
-}
-
-.attributes {
-  background-color: color.$secondaryAlpha5;
-  border: 1px solid color.$secondaryAlpha10;
-  border-radius: 13px;
-  width: 90%;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 7vh 2vw;
-  margin-top: 3vh;
-
-  .contents {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5vh;
-
-    img {
-      width: 5.5vw;
-    }
-
-    .message {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      gap: 2vh;
-
-      p {
-        margin: 0;
-      }
-    }
-  }
-}
-
 /* ⋆｡˚ ୨୧ ˚｡⋆ Our President & CEO ⋆｡˚ ୨୧ ˚｡⋆ */
 
-.content {
+.content{
   position: relative;
   width: 73%;
   height: max-content;
@@ -932,6 +836,12 @@
     .ceo {
       display: none;
     }
+    .OPCmessage-container {
+      max-width: 91%;
+      text-wrap: wrap;
+      text-align: justify;
+      margin-left: 3vw;
+    }
   }
 
   .achievements {
@@ -965,7 +875,6 @@
   }
 
 }
-
 .attributes {
   background-color: color.$secondaryAlpha5;
   border: 1px solid color.$secondaryAlpha10;
@@ -978,7 +887,7 @@
   padding: 7vh 2vw;
   margin-top: 3vh;
 
-  .contents {
+  .contents{
     color: white;
     display: flex;
     flex-direction: column;
@@ -989,15 +898,16 @@
       width: 5.5vw;
     }
 
-    .message {
+    .message{
       display: flex;
       flex-direction: column;
       text-align: center;
-      gap: 2vh;
+      gap:2vh;
 
-      p {
+      p{
         margin: 0;
       }
     }
   }
 }
+
