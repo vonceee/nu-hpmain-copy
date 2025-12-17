@@ -2,6 +2,8 @@ import { Component, signal, OnInit, OnDestroy, ViewChildren, QueryList, ElementR
 import { MainHeader } from "src/app/components/main-header/main-header";
 import { MainFooter } from "src/app/components/main-footer/main-footer";
 import { CommonModule } from '@angular/common';
+import { TitleBadge } from 'src/app/components/title-badge/title-badge';
+import { ContainerBox } from 'src/app/components/container-box/container-box';
 
 interface NavTab {
   id: number;
@@ -9,7 +11,6 @@ interface NavTab {
   icon: string;
 }
 
-/* -- Programs Section Outreach Gallery -- */
 interface GalleryItem {
   src: string;
   caption: string;
@@ -24,7 +25,7 @@ interface TimelineEvent {
 
 @Component({
   selector: 'about-us',
-  imports: [MainHeader, MainFooter, CommonModule],
+  imports: [MainHeader, MainFooter, CommonModule, TitleBadge, ContainerBox],
   templateUrl: './about-us.html',
   styleUrls: ['./about-us.scss'],
 })
