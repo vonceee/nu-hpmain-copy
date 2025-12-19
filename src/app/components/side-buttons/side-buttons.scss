@@ -1,3 +1,5 @@
+@import "colors";
+
 .side-buttons-container {
     position: fixed;
     right: 0;
@@ -20,11 +22,9 @@
     right: 0;
     top: 0;
     height: 56px;
-    width: 200px;
+    width: max-content;
 
-    background: linear-gradient(135deg,
-            #8b2b28 0%,
-            #5a1614 100%);
+    background: $primarydark;
 
     border-radius: 999px 0 0 999px;
     border: 2px solid rgba(0, 0, 0, 0.4);
@@ -32,8 +32,9 @@
     align-items: center;
 
     /* Visual Collapse */
-    transform: translateX(144px);
+    transform: translateX(calc(100% - 56px));
     transition: transform 0.35s ease;
+    padding-right: 24px;
 
     /* Depth */
     box-shadow:
@@ -50,11 +51,6 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-
-    background: radial-gradient(circle at 20% 20%,
-            rgba(255, 255, 255, 0.25),
-            transparent 60%);
-
     pointer-events: none;
 }
 
@@ -83,19 +79,15 @@
 .icon-wrapper i {
     color: #ffffff;
     font-size: 20px;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
 }
 
 .btn-text {
     color: #fff;
     font-weight: 600;
-    white-space: nowrap;
     opacity: 0;
-    transform: translateX(-6px);
-    transition: opacity 0.2s ease 0.15s, transform 0.2s ease 0.15s;
+    white-space: nowrap;
 }
 
 .side-btn-inner.is-active .btn-text {
     opacity: 1;
-    transform: translateX(0);
 }

@@ -18,7 +18,7 @@ export class MainHeader {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    
+
     // Prevent body scroll when mobile menu is open
     if (this.isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -40,14 +40,14 @@ export class MainHeader {
   private checkScreenSize(): void {
     const wasDesktop = this.isDesktop;
     this.isDesktop = window.innerWidth >= 768;
-    
-    // Close mobile menu if resizing to desktop
+
+    // close mobile menu if resizing to desktop
     if (this.isDesktop && wasDesktop === false && this.isMobileMenuOpen) {
       this.closeMobileMenu();
     }
   }
 
-  // Close mobile menu when clicking on navigation links
+  // close mobile menu when clicking on navigation links
   onNavLinkClick(): void {
     if (!this.isDesktop && this.isMobileMenuOpen) {
       this.closeMobileMenu();
