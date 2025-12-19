@@ -43,12 +43,12 @@ export class aboutUs implements OnInit, OnDestroy {
   private autoPlayInterval: any;
 
   navTabs: NavTab[] = [
-    { id: 0, label: 'Our Journey', icon: 'assets/images/aboutus/journey-icon.svg' },
-    { id: 1, label: 'Awards and Achievements', icon: 'assets/images/aboutus/award-icon.svg' },
-    { id: 2, label: 'President & CEO', icon: 'assets/images/aboutus/ceo-icon.svg' },
-    { id: 3, label: 'Programs', icon: 'assets/images/aboutus/program-icon.svg' },
-    { id: 4, label: 'Partnerships', icon: 'assets/images/aboutus/partner-icon.svg' },
-    { id: 5, label: 'Mission and Vision', icon: 'assets/images/aboutus/mission-icon.svg' },
+    { id: 0, label: 'Our Journey', icon: 'bi bi-building' },
+    { id: 1, label: 'Awards and Achievements', icon: 'bi bi-award' },
+    { id: 2, label: 'President & CEO', icon: 'bi bi-person' },
+    { id: 3, label: 'Programs', icon: 'bi bi-award' },
+    { id: 4, label: 'Partnerships', icon: 'bi bi-briefcase' },
+    { id: 5, label: 'Mission and Vision', icon: 'bi bi-rocket-takeoff' },
   ];
 
   galleryItems: GalleryItem[] = [

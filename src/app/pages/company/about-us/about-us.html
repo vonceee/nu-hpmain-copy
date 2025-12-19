@@ -17,7 +17,7 @@
 
     @for (item of navTabs; track item.id) {
     <button #navBtn [class.active]="tab() == item.id" (click)="setTab(item.id)">
-      <img [src]="item.icon" [alt]="item.label">
+      <i [class]="item.icon" style="color: white;"></i>
       <span>{{ item.label }}</span>
     </button>
     }
